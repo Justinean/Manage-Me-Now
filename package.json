@@ -28,5 +28,9 @@
   "bugs": {
     "url": "https://github.com/Justinean/Tech-Blog/issues"
   },
-  "homepage": "https://github.com/Justinean/Tech-Blog#readme"
+  "homepage": "https://github.com/Justinean/Tech-Blog#readme",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "prettier": "^2.3.2"
+  }
 }
