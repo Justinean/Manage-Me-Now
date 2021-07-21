@@ -31,7 +31,7 @@ ProjectEmployee.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'projectemployee',
+        modelName: 'project_employee',
     }
 )
 
