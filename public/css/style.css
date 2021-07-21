@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: rgb(97, 47, 18);
+  background-color: rgb(141, 68, 26);
 }
 
 .flex-container {
@@ -23,7 +23,7 @@ header {
   text-align: center;
   justify-content: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100px;
   width: 100%;
   background-color: #065b83;
