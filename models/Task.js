@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Project extends Model {}
+class Task extends Model {}
 
-Project.init(
+Task.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -15,14 +15,25 @@ Project.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        is_complete: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        project_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                modelName: "project",
+                key: 'id',
+            }
+        }
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'project',
+        modelName: 'task',
     }
 )
 
-module.exports = Project;
+module.exports = Task;
