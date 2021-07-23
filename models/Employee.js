@@ -26,6 +26,10 @@ Employee.init(
         len: [8,16],
       }
     },
+    is_manager: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
