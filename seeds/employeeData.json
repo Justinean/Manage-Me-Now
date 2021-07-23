@@ -1,0 +1,20 @@
+[
+    {
+        "username": "slat",
+        "email": "randomemail@gmail.com",
+        "password": "password",
+        "is_manager": true
+    },
+    {
+        "username": "slat2",
+        "email": "randomemail2@gmail.com",
+        "password": "password2",
+        "is_manager": true
+    },
+    {
+        "username": "slat3",
+        "email": "randomemail3@gmail.com",
+        "password": "password3",
+        "is_manager": true
+    }
+]

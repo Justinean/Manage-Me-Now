@@ -1,0 +1,22 @@
+[
+    {
+        "name": "actually seed the database",
+        "is_complete": false
+    },
+    {
+        "name": "actually delete the database",
+        "is_complete": false
+    },
+    {
+        "name": "actually create the database",
+        "is_complete": false
+    },
+    {
+        "name": "create user interfaces",
+        "is_complete": false
+    },
+    {
+        "name": "check off this task",
+        "is_complete": false
+    }
+]
