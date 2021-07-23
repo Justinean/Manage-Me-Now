@@ -28,6 +28,7 @@ Employee.init(
     },
     is_manager: {
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
       allowNull: false
     },
     email: {
