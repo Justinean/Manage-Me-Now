@@ -17,6 +17,6 @@
     },
     {
         "name": "check off this task",
-        "is_complete": false
+        "is_complete": true
     }
 ]

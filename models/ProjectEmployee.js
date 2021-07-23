@@ -14,14 +14,14 @@ ProjectEmployee.init(
         project_id: {
             type: DataTypes.INTEGER,
             references: {
-                modelName: "project",
+                model: "project",
                 key: 'id',
             }
         },
         employee_id: {
             type: DataTypes.INTEGER,
             references: {
-                modelName: "employee",
+                model: "employee",
                 key: 'id',
             }
         }

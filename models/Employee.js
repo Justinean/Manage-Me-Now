@@ -52,7 +52,7 @@ Employee.init(
         newEmployeeData.password = await newEmployeeData.password.trim();
         newEmployeeData.password = await bcrypt.hash(newEmployeeData.password, 10);
 
-        newEmployeeData.Employeename = await newEmployeeData.Employeename.toLowerCase();
+        newEmployeeData.username = await newEmployeeData.username.toLowerCase();
         newEmployeeData.email = await newEmployeeData.email.toLowerCase();
 
         return newEmployeeData;

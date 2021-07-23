@@ -14,14 +14,14 @@ const seedDatabase = async () => {
     });
 
     const projects = await Project.bulkCreate(projectData, {
-        returning: true,
+        returning: true
     })
 
     for (const i in projects) {
-        for (let j; j < Math.floor(Math.random() * employees.length); j++) {
-            ProjectEmployee.create({
+        for (let j = 0; j < 3; j++) {
+            await ProjectEmployee.create({
                 project_id: projects[i].id,
-                employee_id: employees[Math.floor(Math.random() * employees.length)].id
+                employee_id: employees[j].id
             })
         }
     }
@@ -29,7 +29,7 @@ const seedDatabase = async () => {
     for (const task of taskData) {
         await Task.create({
             ...task,
-            project_id: projects[Math.floor(Math.random() * users.length)].id,
+            project_id: projects[Math.floor(Math.random() * projects.length)].id,
         });
     }
 
