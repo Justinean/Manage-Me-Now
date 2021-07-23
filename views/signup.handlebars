@@ -1,0 +1,35 @@
+ <div class="container">
+    <div class="row mt-5 pt-3 mx-3">
+      <div class="col-sm mx-1 mb-3">
+        <h2 class="mb-3">Sign Up</h2>
+        <p>
+          Sign up for a Manage Me Now account to start keeping track of your teams and projects. If you already have a Manage Me Now account, <a href="#">log in here</a>.
+        </p>
+      </div>
+      <div class="col-sm mx-1">
+        <form class="p-2 bg-light border border-dark rounded" id= 'signUpForm'>
+          <div class="mb-3 mt-3 mx-3">
+            <label for="signUpEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="signUpEmail" placeholder="Enter your email">
+          </div>
+          <div class="mb-3 mx-3">
+            <label for="signUpUsername" class="form-label">Username</label>
+            <input type="text" class="form-control" id="signUpUsername" placeholder="Create a username">
+          </div>
+          <div class="mb-3 mx-3">
+            <input type="checkbox" class="form-check-input" id="managerCheck">
+            <label class="ms-2 form-check-label" for="managerCheck">I am a manager</label>
+          </div>
+          <div class="mb-3 mx-3">
+            <label for="signUpPassword" class="form-label">Password, 8 - 16 characters</label>
+            <input type="password" class="form-control" id="signUpPassword" placeholder="Create a password">
+          </div>
+          
+          <div class="mb-3 mx-3">
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="./js/signup.js"></script>
