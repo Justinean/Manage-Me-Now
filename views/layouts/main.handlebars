@@ -24,32 +24,32 @@
         <ul class="navbar-nav">
           <!-- home -->
           <li class="nav-item ms-3">
-            <a class="nav-link" aria-current="page" href="#"><i class="bi bi-house-door"></i> Home</a>
+            <a class="nav-link" aria-current="page" href="/"><i class="bi bi-house-door"></i> Home</a>
           </li>
           <!-- dashboard  -->
           <li class="nav-item ms-3">
-            <a class="nav-link" href="#"><i class="bi bi-speedometer"></i> Dashboard</a>
           </li>
           {{#if loggedIn}}
           <!-- nav options if logged in -->
           <!-- log out  -->
           <li class="nav-item ms-3">
-            <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+            <button id="logout"><i class="fas fa-sign-out-alt"></i> Log Out</button>
           </li>
           {{else}}
           <!-- nav options if not logged in -->
           <!-- log in -->
           <li class="nav-item ms-3">
-            <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i> Log In</a>
+            <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> Log In</a>
           </li>
           <!-- sign up -->
           <li class="nav-item ms-3">
-            <a class="nav-link" href="#"><i class="fas fa-user-plus"></i> Sign Up</a>
+            <a class="nav-link" href="/signup"><i class="fas fa-user-plus"></i> Sign Up</a>
           </li>
           {{/if}}
           <!-- contact -->
           <li class="nav-item ms-3">
-            <a class="nav-link" href="#"><i class="far fa-envelope"></i> Contact Us</a>
+            <a class="nav-link" href="/contactus"><i class="far fa-envelope"></i> Contact Us</a>
+
           </li>
         </ul>
       </div>
