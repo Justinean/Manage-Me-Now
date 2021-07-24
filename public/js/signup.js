@@ -1,5 +1,5 @@
 const signUp = async (event) => {
-event.preventDefault();
+  event.preventDefault();
 
   console.log("signup js");
 
@@ -8,7 +8,7 @@ event.preventDefault();
   const manager = document.querySelector('#managerCheck').value;
   const password = document.querySelector('#signUpPassword').value.trim();
 
-  if (email && username && manager && password) {
+  if (email && username && manager !== undefined && password) {
     const response = await fetch('/api/employee/signup', {
       method: 'POST',
       body: JSON.stringify({ email, username, manager, password }),
@@ -16,14 +16,26 @@ event.preventDefault();
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard');
-        console.log("Created User");
+      document.location.replace('/dashboard');
+      console.log("Created User");
     } else {
-        alert(response.statusText);
+      alert(response.statusText);
     }
   } else {
-      alert("Please fill in all feilds")
+    alert("Please fill in all feilds")
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  let object = document.querySelector("#managerCheck")
+  object.addEventListener("click", () => {
+    console.log(document.querySelector(":checked"))
+    if (document.querySelector(":checked") === null) {
+      object.value = false
+    } else {
+      object.value = true
+    }
+  });
+});
 
 document.querySelector('#signUpForm').addEventListener('submit', signUp);
