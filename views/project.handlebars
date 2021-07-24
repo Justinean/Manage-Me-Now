@@ -1,0 +1,32 @@
+<section>
+  <div>
+    <div>
+      <a href="/editProject/{{project.id}}"><button>Edit</button></a>
+      <button id="deleteBtn" data-id="{{project.id}}">Delete</button>
+    </div>
+    <div>
+      <p>
+        {{project.title}} Posted by {{project.user.username}} on {{format_date project.date}}
+      </p>
+      <p>
+        {{project.content}}
+      </p>
+    </div>
+
+    <div>
+      {{#if loggedIn}}
+      <a href="/newComment/{{project.id}}"><button>Add a Comment</button></a>
+      {{/if}}
+      {{#if comments.length}}
+      {{#each comments as |comment|}}
+      {{> comment-details}}
+      {{/each}}
+      {{else}}
+      <p>Be the first to Comment!</p>
+      {{/if}}
+    </div>
+
+  </div>
+</section>
+
+<script src="../js/deleteProject.js"></script>
