@@ -23,7 +23,7 @@ Employee.init(
       unique: true,
       validate: {
         isAlphanumeric: true,
-        len: [8,16],
+        len: [0,16],
       }
     },
     is_manager: {
