@@ -29,7 +29,13 @@ router.put('/edit', async (req, res) => {
 });
 
 router.delete('/delete', async (req, res) => {
-
+  try {
+    await Project.destroy({where: {name: req.body.name}})
+    res.json(200).json({message: "Project deleted!"});
+  } catch (err) {
+    res.status(400).json(err);
+  }
+  
 })
 
 module.exports = router;
