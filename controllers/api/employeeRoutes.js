@@ -10,9 +10,9 @@ router.post('/signup', async (req, res) => {
       req.session.username = employeeData.dataValues.username;
       req.session.mgr = employeeData.dataValues.is_manager;
       req.session.loggedIn = true;
-    });
 
-    res.status(200).json(employeeData);
+      res.json({ user: employeeData, message: "You are now logged in!" });
+    });
   } catch (err) {
     res.status(400).json(err);
   }
@@ -39,9 +39,9 @@ router.post('/login', async (req, res) => {
       req.session.username = employeeData.dataValues.username;
       req.session.mgr = employeeData.dataValues.is_manager;
       req.session.loggedIn = true;
-    });
 
-    res.status(200).json(employeeData);
+      res.json({ user: employeeData, message: "You are now logged in!" });
+    });
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
