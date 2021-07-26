@@ -14,7 +14,7 @@ router.post('/new', async (req, res) => {
   }
 });
 
-router.post('/edit', async (req, res) => {
+router.put('/edit', async (req, res) => {
   try {
     const projectData = await Project.findOne({where: {name: req.body.name}});
     const employeeData = await Employee.findOne({where: {username: req.body.username}});
@@ -27,5 +27,9 @@ router.post('/edit', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+router.delete('/delete', async (req, res) => {
+
+})
 
 module.exports = router;
