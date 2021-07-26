@@ -1,14 +1,28 @@
 const router = require('express').Router();
 const { Project, Employee } = require('../models');
-// const { User, Blog } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   const projects = await Project.findAll();
-  const employees = await Employee.findAll();
+  const managers = await Employee.findAll({
+    where: {
+      is_manager: true
+    }
+  });
+  const employees = await Employee.findAll({
+    where: {
+      is_manager: false
+    }
+  });
 
-  res.render('home', {projects, employees, isMgr: req.session.mgr})
-})
+
+  res.render('home', {
+    projects,
+    managers,
+    employees,
+    isMgr: req.session.mgr
+  });
+});
 
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {

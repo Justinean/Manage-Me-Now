@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Employee, Project, ProjectEmployee } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-router.post('/new', async (req, res) => {
+router.post('/new', withAuth, async (req, res) => {
   try {
     const projectData = await Project.create(req.body.name);
     await ProjectEmployee.create({
@@ -14,10 +15,18 @@ router.post('/new', async (req, res) => {
   }
 });
 
-router.put('/edit', async (req, res) => {
+router.put('/edit/:id', withAuth, async (req, res) => {
   try {
-    const projectData = await Project.findOne({where: {name: req.body.name}});
-    const employeeData = await Employee.findOne({where: {username: req.body.username}});
+    const projectData = await Project.findOne({
+      where: {
+        id: req.params.id
+      }
+    });
+    const employeeData = await Employee.findOne({
+      where: {
+        username: req.body.username
+      }
+    });
     await ProjectEmployee.create({
       project_id: projectData.dataValues.id,
       employee_id: employeeData.dataValues.id
@@ -28,14 +37,17 @@ router.put('/edit', async (req, res) => {
   }
 });
 
-router.delete('/delete', async (req, res) => {
+router.delete('/delete/:id', withAuth, async (req, res) => {
   try {
-    await Project.destroy({where: {name: req.body.name}})
-    res.json(200).json({message: "Project deleted!"});
+    await Project.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    res.json(200).json({ message: "Project deleted!" });
   } catch (err) {
     res.status(400).json(err);
   }
-  
-})
+});
 
 module.exports = router;

@@ -3,7 +3,7 @@ const router = require('express').Router();
 const employeeRoutes = require('./employeeRoutes');
 const projectRoutes = require('./projectRoutes');
 
-router.use('/employee', employeeRoutes);
-router.use('/project', projectRoutes);
+router.use('/employees', employeeRoutes);
+router.use('/projects', projectRoutes);
 
 module.exports = router;
