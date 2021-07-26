@@ -13,4 +13,18 @@ router.post('/new', withAuth, async (req, res) => {
   }
 });
 
+router.delete('/delete/:id', withAuth, async (req, res) => {
+  try {
+    await Task.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    res.json(200).json({ message: "Task deleted!" });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
 module.exports = router;
