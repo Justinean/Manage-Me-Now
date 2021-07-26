@@ -4,7 +4,10 @@ const { Project, Employee } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
+  const projects = await Project.findAll();
+  const employees = await Employee.findAll();
 
+  res.render('home', {projects, employees, isMgr: req.session.mgr})
 })
 
 router.get('/login', (req, res) => {
