@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Employee, Project, ProjectEmployee } = require('../../models');
 
-router.post('/', async (req, res) => {
+router.post('/new', async (req, res) => {
   try {
     const projectData = await Project.create(req.body.name);
     await ProjectEmployee.create({
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.post('/employee', async (req, res) => {
+router.post('/edit', async (req, res) => {
   try {
     const projectData = await Project.findOne({where: {name: req.body.name}});
     const employeeData = await Employee.findOne({where: {username: req.body.username}});
