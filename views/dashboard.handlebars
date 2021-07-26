@@ -36,15 +36,15 @@
   </div> --}}
 
   <section>
-  <h2>Welcome, {{projects.username}}</h2>
+  <h2>{{username}}'s dashboard</h2>
   <div>
     <h3>Your projects</h3>
     {{#if projects.length}}
     {{#each projects as |project|}}
-    {{> project-details}}
+    {{> project-list}}
     {{/each}}
     {{else}}
-    <p>Get those fingers clicking!</p>
+    <p>You have no current projects.</p>
     {{/if}}
   </div>
   <div>
