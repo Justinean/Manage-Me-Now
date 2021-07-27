@@ -1,0 +1,14 @@
+<section class="card">
+  <!-- The contents of this card links to the gallery page using the gallery ID -->
+  <a href="/project/{{id}}">
+    <!-- The card contains the gallery name as the card header -->
+
+
+{{!-- next code is from partials activity, likely is not needed for our app --}}
+    <header>{{name}}</header>
+    <!-- The card contains the first painting of the gallery -->
+    <img src="/images/{{projects.[0].filename}}" alt="{{projects.[0].description}}">
+  </a>
+
+
+</section>
