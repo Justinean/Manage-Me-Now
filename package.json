@@ -1,5 +1,5 @@
 {
-  "name": "Tech-Blog",
+  "name": "Manage-Me-Now",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Justinean/Tech-Blog.git"
+    "url": "git+https://github.com/Justinean/Manage-Me-Now.git"
   },
   "keywords": [],
   "author": "",
@@ -26,9 +26,9 @@
     "sequelize": "^6.3.5"
   },
   "bugs": {
-    "url": "https://github.com/Justinean/Tech-Blog/issues"
+    "url": "https://github.com/Justinean/Manage-Me-Now/issues"
   },
-  "homepage": "https://github.com/Justinean/Tech-Blog#readme",
+  "homepage": "https://github.com/Justinean/Manage-Me-Now#readme",
   "devDependencies": {
     "eslint": "^7.30.0",
     "prettier": "^2.3.2"
