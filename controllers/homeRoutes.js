@@ -24,8 +24,8 @@ const employees = await employeeData.map((employee) => employee.get({ plain: tru
     projects,
     managers,
     employees,
-    loggedIn: req.session.loggedIn,
-    isMgr: req.session.mgr
+    isMgr: req.session.mgr,
+    loggedIn: req.session.loggedIn
   });
 });
 

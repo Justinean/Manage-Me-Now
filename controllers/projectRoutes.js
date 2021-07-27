@@ -59,8 +59,8 @@ router.get('/:id', withAuth, async (req, res) => {
     employees,
     projects,
     tasks,
-    loggedIn: req.session.loggedIn,
-    isMgr: req.session.mgr
+    isMgr: req.session.mgr,
+    loggedIn: req.session.loggedIn
   });
 });
 
@@ -126,8 +126,8 @@ router.get('/addEmployee/:id', withAuth, async (req, res) => {
     projects,
     tasks,
     addEmployee: true,
-    loggedIn: req.session.loggedIn,
-    isMgr: req.session.mgr
+    isMgr: req.session.mgr,
+    loggedIn: req.session.loggedIn
   });
 });
 

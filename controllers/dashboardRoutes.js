@@ -68,7 +68,8 @@ router.get('/:id', withAuth, async (req, res) => {
     res.render('dashboard', {
         projects,
         tasks,
-        isMgr: req.session.mgr
+        isMgr: req.session.mgr,
+        loggedIn: req.session.loggedIn
     });
 });
 
@@ -99,8 +100,9 @@ router.get('/newProject', async (req, res) => {
     res.render('dashboard', {
         projects,
         tasks,
-        newProject: true,
-        isMgr: req.session.mgr
+        isMgr: req.session.mgr,
+        loggedIn: req.session.loggedIn,
+        newProject: true
     });
 });
 
