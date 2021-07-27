@@ -31,12 +31,15 @@
           </li>
           <!-- dashboard  -->
           <li class="nav-item ms-3">
-          </li>
+            <a class="nav-link ms-3" href="#"><i class="bi bi-speedometer"></i> Dashboard</a>
+            <!-- contact -->
+          <li class="nav-item ms-3">
+            <a class="nav-link ms-3" href="/contactus"><i class="far fa-envelope"></i> Contact Us</a>
           {{#if loggedIn}}
           <!-- nav options if logged in -->
           <!-- log out  -->
-          <li class="nav-item ms-3">
-            <button id="logout"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+          <li class="nav-item ms-5 my-1">
+            <button id="logout" class="rounded-3"><i class="fas fa-sign-out-alt"></i> Log Out</button>
           </li>
           {{else}}
           <!-- nav options if not logged in -->
@@ -49,10 +52,6 @@
             <a class="nav-link" href="/signup"><i class="fas fa-user-plus"></i> Sign Up</a>
           </li>
           {{/if}}
-          <!-- contact -->
-          <li class="nav-item ms-3">
-            <a class="nav-link" href="/contactus"><i class="far fa-envelope"></i> Contact Us</a>
-
           </li>
         </ul>
       </div>

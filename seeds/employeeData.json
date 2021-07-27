@@ -15,6 +15,6 @@
         "username": "slat3",
         "email": "randomemail3@gmail.com",
         "password": "password3",
-        "is_manager": true
+        "is_manager": false
     }
 ]

@@ -1,0 +1,34 @@
+<section>
+  <h3>All Company Projects</h3>
+  <div>
+    
+    {{#if projects.length}}
+    {{#each projects as |project|}}
+    {{> project-list}}
+    {{/each}}
+    {{else}}
+    <p>The company is not working on any projects.</p>
+    {{/if}}
+  </div>
+  <h3>All Employees</h3>
+  <div>
+    {{#if employees.length}}
+    {{#each employees as |employee|}}
+    {{> employee-list}}
+    {{/each}}
+    {{else}}
+    <p>The company has no employees.</p>
+    {{/if}}
+  </div>
+  <h3>All Managers</h3>
+  <div>
+    {{#if employees.length}}
+    {{#each managers as |manager|}}
+    {{> employee-list}}
+    {{/each}}
+    {{else}}
+    <p>The company has no managers.</p>
+    {{/if}}
+  </div>
+  
+</section>
