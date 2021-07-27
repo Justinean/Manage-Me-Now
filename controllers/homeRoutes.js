@@ -3,23 +3,28 @@ const { Project, Employee } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
-  const projects = await Project.findAll();
-  const managers = await Employee.findAll({
-    where: {
-      is_manager: true
-    }
-  });
-  const employees = await Employee.findAll({
-    where: {
-      is_manager: false
-    }
-  });
+const projectData = await Project.findAll();
+const projects = await projectData.map((project) => project.get({ plain: true }));
 
+const managerData = await Employee.findAll({
+  where: {
+    is_manager: true
+  }
+});
+const managers = await managerData.map((manager) => manager.get({ plain: true }));
+
+const employeeData = await Employee.findAll({
+  where: {
+    is_manager: false
+  }
+});
+const employees = await employeeData.map((employee) => employee.get({ plain: true })); 
 
   res.render('home', {
     projects,
     managers,
     employees,
+    loggedIn: req.session.loggedIn,
     isMgr: req.session.mgr
   });
 });
