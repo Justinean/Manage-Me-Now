@@ -37,6 +37,7 @@
 
   <section>
   <h2>{{username}}'s dashboard</h2>
+  <h3><a class="icon" href="mailto:{{email}}"><i class="far fa-envelope"></i>{{email}}</a></h3>
   <div>
     <h3>Your projects</h3>
     {{#if projects.length}}
@@ -48,6 +49,18 @@
     {{/if}}
   </div>
   <div>
-    <a href="/dashboard/newProject"><button>Add New project!</button></a>
+    <h3>Your Tasks</h3>
+    {{#if tasks.length}}
+    {{#each tasks as |task|}}
+    {{> task-list}}
+    {{/each}}
+    {{else}}
+    <p>You have no current tasks.</p>
+    {{/if}}
   </div>
+  {{#if isMgr}}
+  <div>
+    <a href="/dashboard/addProject"><button>Add New Project</button></a>
+  </div>
+  {{/if}}
 </section>
