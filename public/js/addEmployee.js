@@ -1,11 +1,9 @@
 async function addEmployee(event) {
   event.preventDefault();
 
-  console.log("-------------------------------");
-
   const employee_id = document.querySelector(':checked').value;
   const project_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
-  console.log(employee_id);
+
   const response = await fetch(`/api/projects/edit/${project_id}`, {
     method: 'PUT',
     body: JSON.stringify({ employee_id }),
