@@ -21,30 +21,26 @@
     </div>
     {{/if}}
 
+<h3>Project Employees</h3> 
+{{!-- display this btn inline with heading  --}}
+<a href="/project/addEmployee{{currentProject.id}}"><button>Add New Employee</button></a>
+{{!-- all employees on project  --}}
+   {{#if addEmployee}}
+<form id="newEmployeeForm" class="p-2 bg-light border border-dark rounded">
+    {{#each allEmployees as |allEmployee|}}
+    {{> employees-to-add}}
+    {{/each}}
+</form>
+    {{/if}}
+
   {{#each employees as |employee|}}
     {{> employee-list}}
     {{/each}}
 
-  <a href="/project/addEmployee{{currentProject.id}}"><button>Add New Employee</button></a>
 
-   {{#if addEmployee}}
-    {{#each allEmployees as |allEmployee|}}
-    {{> employees-to-add}}
-    {{/each}}
-    {{/if}}
 
     <div>
     <h3>Project Tasks</h3>
-    {{#if tasks.length}}
-    {{#each tasks as |task|}}
-    {{> task-details}}
-    {{/each}}
-    {{else}}
-    <p>There are not current tasks.</p>
-    {{/if}}
-  </div>
-
-
     {{#if isMgr}}
  <a href="/project/newTask{{currentProject.id}}"><button>Add New Task</button></a>
  {{/if}}
@@ -62,4 +58,16 @@
         </div>
         </form>
 {{/if}}    
+
+    {{#if tasks.length}}
+    {{#each tasks as |task|}}
+    {{> task-details}}
+    {{/each}}
+    {{else}}
+    <p>There are not current tasks.</p>
+    {{/if}}
+  </div>
+
+
+
 </section>
