@@ -16,7 +16,7 @@
 
   {{#if isMgr}}
   <div>
-    <button data-id="{{currentProject.id}}">DELETE</button>
+    <button data-id="{{currentProject.id}}" id="deleteProjectBtn">DELETE</button>
   </div>
   {{/if}}
 
@@ -68,3 +68,5 @@
     {{/if}}
   </div>
 </section>
+
+<script src="/js/deleteProject.js"></script>
