@@ -1,32 +1,73 @@
 <section>
+  <h2>{{username}}'s dashboard</h2>
+  <h3><a class="icon" href="mailto:{{email}}"><i class="far fa-envelope"></i>{{email}}</a></h3>
   <div>
-    <div>
-      <a href="/editProject/{{project.id}}"><button>Edit</button></a>
-      <button id="deleteBtn" data-id="{{project.id}}">Delete</button>
-    </div>
-    <div>
-      <p>
-        {{project.title}} Posted by {{project.user.username}} on {{format_date project.date}}
-      </p>
-      <p>
-        {{project.content}}
-      </p>
-    </div>
-
-    <div>
-      {{#if loggedIn}}
-      <a href="/newComment/{{project.id}}"><button>Add a Comment</button></a>
-      {{/if}}
-      {{#if comments.length}}
-      {{#each comments as |comment|}}
-      {{> comment-details}}
-      {{/each}}
-      {{else}}
-      <p>Be the first to Comment!</p>
-      {{/if}}
-    </div>
-
+    <h3>Your Projects</h3>
+    {{#if projects.length}}
+    {{#each projects as |project|}}
+    {{> project-list}}
+    {{/each}}
+    {{else}}
+    <p>You have no current projects.</p>
+    {{/if}}
   </div>
-</section>
 
-<script src="../js/deleteProject.js"></script>
+    <p>Current project: <h3>{{currentProject.name}}</h3>
+    </p>
+    
+    {{#if isMgr}}
+    <div>
+      <button data-id="{{currentProject.id}}">DELETE</button>
+    </div>
+    {{/if}}
+
+<h3>Project Employees</h3> 
+{{!-- display this btn inline with heading  --}}
+<a href="/project/addEmployee{{currentProject.id}}"><button>Add New Employee</button></a>
+{{!-- all employees on project  --}}
+   {{#if addEmployee}}
+<form id="newEmployeeForm" class="p-2 bg-light border border-dark rounded">
+    {{#each allEmployees as |allEmployee|}}
+    {{> employees-to-add}}
+    {{/each}}
+</form>
+    {{/if}}
+
+  {{#each employees as |employee|}}
+    {{> employee-list}}
+    {{/each}}
+
+
+
+    <div>
+    <h3>Project Tasks</h3>
+    {{#if isMgr}}
+ <a href="/project/newTask{{currentProject.id}}"><button>Add New Task</button></a>
+ {{/if}}
+
+{{#if newTask}}
+<form id="newTaskForm" class="p-2 bg-light border border-dark rounded">
+          <div class="mb-3 mt-3 mx-3">
+            <label for="newTask" class="form-label">Task</label>
+            <input class="form-control" id="newTaskInput" placeholder="Enter new task">
+          </div>
+          <div class="mb-3 mx-3">
+            {{#each allEmployees as |allEmployee|}}
+            {{> employees-to-add}}
+            {{/each}}
+        </div>
+        </form>
+{{/if}}    
+
+    {{#if tasks.length}}
+    {{#each tasks as |task|}}
+    {{> task-details}}
+    {{/each}}
+    {{else}}
+    <p>There are not current tasks.</p>
+    {{/if}}
+  </div>
+
+
+
+</section>
