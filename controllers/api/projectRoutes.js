@@ -18,24 +18,15 @@ router.post('/new', withAuth, async (req, res) => {
 });
 
 router.put('/edit/:id', withAuth, async (req, res) => {
+  console.log(req.body);
   try {
-    const projectData = await Project.findOne({
-      where: {
-        id: req.params.id
-      }
-    });
-    const employeeData = await Employee.findOne({
-      where: {
-        username: req.body.username
-      }
-    });
     await ProjectEmployee.create({
-      project_id: projectData.dataValues.id,
-      employee_id: employeeData.dataValues.id
+      project_id: req.params.id,
+      employee_id: req.body.employee_id
     });
-    res.json(200).json(projectData);
+    res.json(200).json({ message: "You've added an employee!"});
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(400).json(err);
   }
 });

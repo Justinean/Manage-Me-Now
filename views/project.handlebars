@@ -22,14 +22,14 @@
 
   <h3>Project Employees</h3>
   {{!-- display this btn inline with heading --}}
-  <a href="/project/addEmployee{{currentProject.id}}"><button>Add New Employee</button></a>
+  <a href="/project/addEmployee/{{currentProject.id}}"><button>Add New Employee</button></a>
   {{!-- all employees on project --}}
   {{#if addEmployee}}
   <form id="newEmployeeForm" class="p-2 bg-light border border-dark rounded">
     {{#each allEmployees as |allEmployee|}}
     {{> employees-to-add}}
     {{/each}}
-    <button type="submit" class="btn btn-primary">Add Employee</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   {{/if}}
 
@@ -69,4 +69,6 @@
   </div>
 </section>
 
+
 <script src="/js/deleteProject.js"></script>
+<script src="/js/addEmployee.js"></script>

@@ -179,7 +179,7 @@ router.get('/:id', withAuth, async (req, res) => {
       }
     });
     const currentProject = currentProjectData.get({ plain: true });
-  
+
     // This gets all employees currently assigned to the project.
     const employeesOnProject = await ProjectEmployee.findAll({
       where: {
@@ -196,7 +196,7 @@ router.get('/:id', withAuth, async (req, res) => {
       employeeArray.push(employeeData);
     };
     const employees = await employeeArray.map((employee) => employee.get({ plain: true }));
-  
+
     // This will get all tasks on the current project.
     const taskData = await Task.findAll({
       where: {
@@ -204,7 +204,7 @@ router.get('/:id', withAuth, async (req, res) => {
       }
     });
     const tasks = await taskData.map((task) => task.get({ plain: true }));
-  
+
     res.render('project', {
       currentProject,
       employees,
