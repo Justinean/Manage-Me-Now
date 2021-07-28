@@ -14,7 +14,7 @@ const logIn = async (event) => {
             document.location.replace('/dashboard');
             console.log("You logged in!");
         } else {
-            alert(response.statusText);
+            alert("Could not log in, try again.");
         }
       } else {
           alert("Please fill in all feilds")

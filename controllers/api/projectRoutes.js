@@ -12,6 +12,7 @@ router.post('/new', withAuth, async (req, res) => {
     console.log(projectData, projectEmployee)
     res.json(200).json(projectData);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
@@ -34,6 +35,7 @@ router.put('/edit/:id', withAuth, async (req, res) => {
     });
     res.json(200).json(projectData);
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
@@ -47,6 +49,7 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
     });
     res.json(200).json({ message: "Project deleted!" });
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });

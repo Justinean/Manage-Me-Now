@@ -43,73 +43,83 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/newProject', async (req, res) => {
-    const projectEmployee = await ProjectEmployee.findAll({
-        where: {
-            employee_id: req.session.userId
-        }
-    });
-    const projectArray = [];
-    for (i in projectEmployee) {
-        const projectData = await Project.findOne({
+    try {
+        const projectEmployee = await ProjectEmployee.findAll({
             where: {
-                id: projectEmployee[i].dataValues.project_id
+                employee_id: req.session.userId
             }
         });
-        projectArray.push(projectData);
-    };
-    const projects = await projectArray.map((project) => project.get({ plain: true }));
-
-    const taskData = await Task.findAll({
-        where: {
-            employee_id: req.session.userId
-        }
-    });
-    const tasks = await taskData.map((task) => task.get({ plain: true }));
-
-    res.render('dashboard', {
-        projects,
-        tasks,
-        email: req.session.email,
-        isMgr: req.session.mgr,
-        loggedIn: req.session.loggedIn,
-        username: req.session.username,
-        newProject: true
-    });
+        const projectArray = [];
+        for (i in projectEmployee) {
+            const projectData = await Project.findOne({
+                where: {
+                    id: projectEmployee[i].dataValues.project_id
+                }
+            });
+            projectArray.push(projectData);
+        };
+        const projects = await projectArray.map((project) => project.get({ plain: true }));
+    
+        const taskData = await Task.findAll({
+            where: {
+                employee_id: req.session.userId
+            }
+        });
+        const tasks = await taskData.map((task) => task.get({ plain: true }));
+    
+        res.render('dashboard', {
+            projects,
+            tasks,
+            email: req.session.email,
+            isMgr: req.session.mgr,
+            loggedIn: req.session.loggedIn,
+            username: req.session.username,
+            newProject: true
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
 });
 
 router.get('/:id', withAuth, async (req, res) => {
-    const employeeData = await Employee.findByPk(req.params.id)
-    const projectEmployee = await ProjectEmployee.findAll({
-        where: {
-            employee_id: req.params.id
-        }
-    });
-    const projectArray = [];
-    for (i in projectEmployee) {
-        const projectData = await Project.findOne({
+    try {
+        const employeeData = await Employee.findByPk(req.params.id)
+        const projectEmployee = await ProjectEmployee.findAll({
             where: {
-                id: projectEmployee[i].dataValues.project_id
+                employee_id: req.params.id
             }
         });
-        projectArray.push(projectData);
-    };
-    const projects = await projectArray.map((project) => project.get({ plain: true }));
-
-    const taskData = await Task.findAll({
-        where: {
-            employee_id: req.params.id
-        }
-    });
-    const tasks = await taskData.map((task) => task.get({ plain: true }));
-
-    res.render('dashboard', {
-        projects,
-        tasks,
-        email: req.session.email,
-        isMgr: req.session.mgr,
-        loggedIn: req.session.loggedIn,
-        username: employeeData.dataValues.username
-    });
+        const projectArray = [];
+        for (i in projectEmployee) {
+            const projectData = await Project.findOne({
+                where: {
+                    id: projectEmployee[i].dataValues.project_id
+                }
+            });
+            projectArray.push(projectData);
+        };
+        const projects = await projectArray.map((project) => project.get({ plain: true }));
+    
+        const taskData = await Task.findAll({
+            where: {
+                employee_id: req.params.id
+            }
+        });
+        const tasks = await taskData.map((task) => task.get({ plain: true }));
+    
+        res.render('dashboard', {
+            projects,
+            tasks,
+            email: req.session.email,
+            isMgr: req.session.mgr,
+            loggedIn: req.session.loggedIn,
+            username: employeeData.dataValues.username
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(400).json(err);
+    }
 });
 
 module.exports = router;
