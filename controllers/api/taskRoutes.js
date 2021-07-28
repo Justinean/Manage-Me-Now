@@ -3,7 +3,6 @@ const { Task, Employee } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/new/:id', withAuth, async (req, res) => {
-  console.log("---------------------");
   try {
     const userData = await Employee.findOne({
       where: {
