@@ -1,32 +1,66 @@
 <section>
+  <h2>{{username}}'s dashboard</h2>
+  <h3><a class="icon" href="mailto:{{email}}"><i class="far fa-envelope"></i>{{email}}</a></h3>
   <div>
-    <div>
-      <a href="/editProject/{{project.id}}"><button>Edit</button></a>
-      <button id="deleteBtn" data-id="{{project.id}}">Delete</button>
-    </div>
-    <div>
-      <p>
-        {{project.title}} Posted by {{project.user.username}} on {{format_date project.date}}
-      </p>
-      <p>
-        {{project.content}}
-      </p>
-    </div>
-
-    <div>
-      {{#if loggedIn}}
-      <a href="/newComment/{{project.id}}"><button>Add a Comment</button></a>
-      {{/if}}
-      {{#if comments.length}}
-      {{#each comments as |comment|}}
-      {{> comment-details}}
-      {{/each}}
-      {{else}}
-      <p>Be the first to Comment!</p>
-      {{/if}}
-    </div>
-
+    <h3>Your projects</h3>
+    {{#if projects.length}}
+    {{#each projects as |project|}}
+    {{> project-list}}
+    {{/each}}
+    {{else}}
+    <p>You have no current projects.</p>
+    {{/if}}
   </div>
-</section>
 
-<script src="../js/deleteProject.js"></script>
+    <p>Current project: <h3>{{currentProject.name}}</h3>
+    </p>
+    
+    {{#if isMgr}}
+    <div>
+      <button data-id="{{currentProject.id}}">DELETE</button>
+    </div>
+    {{/if}}
+
+  {{#each employees as |employee|}}
+    {{> employee-list}}
+    {{/each}}
+
+  <a href="/project/addEmployee{{currentProject.id}}"><button>Add New Project</button></a>
+
+   {{#if addEmployee}}
+    {{#each allEmployees as |allEmployee|}}
+    {{> employees-to-add}}
+    {{/if}}
+
+    <div>
+    <h3>Your Tasks</h3>
+    {{#if tasks.length}}
+    {{#each tasks as |task|}}
+    {{> task-details}}
+    {{/each}}
+    {{else}}
+    <p>You have no current tasks.</p>
+    {{/if}}
+  </div>
+
+
+    {{#if isMgr}}
+ <a href="/project/newTask{{currentProject.id}}"><button>Add New Project</button></a>
+ {{/if}}
+
+{{#if newTask}}
+<form id="newTaskForm" class="p-2 bg-light border border-dark rounded">
+          <div class="mb-3 mt-3 mx-3">
+            <label for="newTask" class="form-label">Username</label>
+            <input class="form-control" id="newTaskInput" placeholder="Enter new task">
+          </div>
+          <div class="mb-3 mx-3">
+          <input type="checkbox" class="form-check-input" id="addEmployeeCheck">
+          <label class="ms-2 form-check-label" for="addEmployeeCheck">
+            {{#each allEmployees as |allEmployee|}}
+            {{> employees-to-add}}
+    </label>
+        </div>
+        </form>
+{{/if}}    
+</section>
