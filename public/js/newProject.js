@@ -1,9 +1,10 @@
-const newProject = async (event) => {
+const newProject = async event => {
+  console.log("pog")
   event.preventDefault();
-  const name = document.querySelector('#newProjectName').nodeValue.trim();
-
+  const name = document.querySelector('#newProjectName').value.trim();
+  console.log(name)
   if (name) {
-    const response = await fetch('api/projects/new', {
+    const response = await fetch('/api/projects/new', {
       method: 'POST',
       body: JSON.stringify({ name }),
       headers: {
@@ -19,4 +20,4 @@ const newProject = async (event) => {
   }
 };
 
-document.querySelector('newProjectForm').addEventListener('submit', newProject);
+document.querySelector('#newProjectForm').addEventListener('submit', newProject);
