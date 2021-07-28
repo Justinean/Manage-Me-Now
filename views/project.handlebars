@@ -25,41 +25,40 @@
     {{> employee-list}}
     {{/each}}
 
-  <a href="/project/addEmployee{{currentProject.id}}"><button>Add New Project</button></a>
+  <a href="/project/addEmployee{{currentProject.id}}"><button>Add New Employee</button></a>
 
    {{#if addEmployee}}
     {{#each allEmployees as |allEmployee|}}
     {{> employees-to-add}}
+    {{/each}}
     {{/if}}
 
     <div>
-    <h3>Your Tasks</h3>
+    <h3>Project Tasks</h3>
     {{#if tasks.length}}
     {{#each tasks as |task|}}
     {{> task-details}}
     {{/each}}
     {{else}}
-    <p>You have no current tasks.</p>
+    <p>There are not current tasks.</p>
     {{/if}}
   </div>
 
 
     {{#if isMgr}}
- <a href="/project/newTask{{currentProject.id}}"><button>Add New Project</button></a>
+ <a href="/project/newTask{{currentProject.id}}"><button>Add New Task</button></a>
  {{/if}}
 
 {{#if newTask}}
 <form id="newTaskForm" class="p-2 bg-light border border-dark rounded">
           <div class="mb-3 mt-3 mx-3">
-            <label for="newTask" class="form-label">Username</label>
+            <label for="newTask" class="form-label">Task</label>
             <input class="form-control" id="newTaskInput" placeholder="Enter new task">
           </div>
           <div class="mb-3 mx-3">
-          <input type="checkbox" class="form-check-input" id="addEmployeeCheck">
-          <label class="ms-2 form-check-label" for="addEmployeeCheck">
             {{#each allEmployees as |allEmployee|}}
             {{> employees-to-add}}
-    </label>
+            {{/each}}
         </div>
         </form>
 {{/if}}    
