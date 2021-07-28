@@ -1,6 +1,6 @@
 const newProject = async (event) => {
   event.preventDefault();
-  const name = document.querySelector('#newProject').nodeValue.trim();
+  const name = document.querySelector('#newProjectName').nodeValue.trim();
 
   if (name) {
     const response = await fetch('api/projects/new', {
