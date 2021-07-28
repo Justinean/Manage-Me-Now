@@ -14,7 +14,7 @@ router.get('/', /* withAuth, */ async (req, res) => {
         for (i in projectEmployee) {
             const projectData = await Project.findOne({
                 where: {
-                    id: projectEmployee[i].dataValues.id
+                    id: projectEmployee[i].dataValues.project_id
                 }
             });
             projectArray.push(projectData);

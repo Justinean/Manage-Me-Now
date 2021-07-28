@@ -12,52 +12,53 @@
     {{/if}}
   </div>
 
-    <p>Current project: <h3>{{currentProject.name}}</h3>
-    </p>
-    
-    {{#if isMgr}}
-    <div>
-      <button data-id="{{currentProject.id}}">DELETE</button>
-    </div>
-    {{/if}}
+  <p>Current project:
+  <h3>{{currentProject.name}}</h3>
+  </p>
 
-<h3>Project Employees</h3> 
-{{!-- display this btn inline with heading  --}}
-<a href="/project/addEmployee{{currentProject.id}}"><button>Add New Employee</button></a>
-{{!-- all employees on project  --}}
-   {{#if addEmployee}}
-<form id="newEmployeeForm" class="p-2 bg-light border border-dark rounded">
+  {{#if isMgr}}
+  <div>
+    <button data-id="{{currentProject.id}}">DELETE</button>
+  </div>
+  {{/if}}
+
+  <h3>Project Employees</h3>
+  {{!-- display this btn inline with heading --}}
+  <a href="/project/addEmployee{{currentProject.id}}"><button>Add New Employee</button></a>
+  {{!-- all employees on project --}}
+  {{#if addEmployee}}
+  <form id="newEmployeeForm" class="p-2 bg-light border border-dark rounded">
     {{#each allEmployees as |allEmployee|}}
     {{> employees-to-add}}
     {{/each}}
-</form>
-    {{/if}}
+  </form>
+  {{/if}}
 
   {{#each employees as |employee|}}
-    {{> employee-list}}
-    {{/each}}
+  {{> employee-list}}
+  {{/each}}
 
 
 
-    <div>
+  <div>
     <h3>Project Tasks</h3>
     {{#if isMgr}}
- <a href="/project/newTask{{currentProject.id}}"><button>Add New Task</button></a>
- {{/if}}
+    <a href="/project/newTask{{currentProject.id}}"><button>Add New Task</button></a>
+    {{/if}}
 
-{{#if newTask}}
-<form id="newTaskForm" class="p-2 bg-light border border-dark rounded">
-          <div class="mb-3 mt-3 mx-3">
-            <label for="newTask" class="form-label">Task</label>
-            <input class="form-control" id="newTaskInput" placeholder="Enter new task">
-          </div>
-          <div class="mb-3 mx-3">
-            {{#each allEmployees as |allEmployee|}}
-            {{> employees-to-add}}
-            {{/each}}
-        </div>
-        </form>
-{{/if}}    
+    {{#if newTask}}
+    <form id="newTaskForm" class="p-2 bg-light border border-dark rounded">
+      <div class="mb-3 mt-3 mx-3">
+        <label for="newTask" class="form-label">Task</label>
+        <input class="form-control" id="newTaskInput" placeholder="Enter new task">
+      </div>
+      <div class="mb-3 mx-3">
+        {{#each allEmployees as |allEmployee|}}
+        {{> employees-to-add}}
+        {{/each}}
+      </div>
+    </form>
+    {{/if}}
 
     {{#if tasks.length}}
     {{#each tasks as |task|}}
@@ -67,7 +68,4 @@
     <p>There are not current tasks.</p>
     {{/if}}
   </div>
-
-
-
 </section>
