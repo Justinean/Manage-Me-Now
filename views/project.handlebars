@@ -44,8 +44,7 @@
   <div>
     <h3>Project Tasks</h3>
     {{#if isMgr}}
-    {{!-- change not link button  --}}
-    <a href="/project/newTask{{currentProject.id}}"><button>Add New Task</button></a>
+    <a href="/project/newTask/{{currentProject.id}}"><button>Add New Task</button></a>
     {{/if}}
 
     {{#if newTask}}
@@ -76,3 +75,4 @@
 
 <script src="/js/deleteProject.js"></script>
 <script src="/js/addEmployee.js"></script>
+<script src="/js/newTask.js"></script>

@@ -27,10 +27,13 @@ const seedDatabase = async () => {
     }
 
     for (const task of taskData) {
+        let randomNumber = employees[Math.floor(Math.random() * employees.length)].id;
+        const employeeData = await Employee.findByPk(randomNumber);
         await Task.create({
             ...task,
             project_id: projects[Math.floor(Math.random() * projects.length)].id,
-            employee_id: employees[Math.floor(Math.random() * employees.length)].id
+            employee_id: randomNumber,
+            task_user: employeeData.dataValues.username
         });
     }
 

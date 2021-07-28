@@ -15,16 +15,15 @@ Task.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        is_complete: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false
-        },
         project_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: "project",
                 key: 'id',
             }
+        },
+        task_user: {
+            type: DataTypes.STRING,
         },
         employee_id: {
             type: DataTypes.INTEGER,
