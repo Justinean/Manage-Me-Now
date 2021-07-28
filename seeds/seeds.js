@@ -18,7 +18,7 @@ const seedDatabase = async () => {
     })
 
     for (const i in projects) {
-        for (let j = 0; j < 3; j++) {
+        for (let j = 0; j < employees.length; j++) {
             await ProjectEmployee.create({
                 project_id: projects[i].id,
                 employee_id: employees[j].id
