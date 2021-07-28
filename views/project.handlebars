@@ -2,7 +2,7 @@
   {{!-- <div class="main-container m-2"> --}}
     <div class="mt-5 ms-3">
       <h3 class="p-4">All Projects</h3>
-      <div class="my-2 d-flex flex-row flex-wrap justify-content-center">
+      <div class="mt-2 mb-5 d-flex flex-row flex-wrap justify-content-center">
         {{#if projects.length}}
         {{#each projects as |project|}}
         {{> project-list}}
@@ -13,8 +13,10 @@
       </div>
     </div>
 
+    <hr>
+
     <div class="ms-3 p-4 my-3">
-    <h3 class="d-inline">{{currentProject.name}}</h3>
+    <h3 class="d-inline">Project: {{currentProject.name}}</h3>
     {{#if isMgr}}
     <a class="d-inline-block my-3 mx-4 btn bg-primary text-white" data-id="{{currentProject.id}}" id="deleteProjectBtn"
       href="/dashboard/newProject">Delete Project</a>
@@ -22,10 +24,10 @@
     </div>
 
     {{!-- flex container --}}
-    <div class="container-fluid d-flex flex-column m-0">
+    <div class="container-fluid d-flex flex-column m-0 mb-5">
       {{!-- left flex --}}
       <div class="row justify-content-center">
-        <div class="border border-dark border-1 p-4 col-sm-4 mx-2 rounded bg-light text-center">
+        <div class="border border-dark border-1 p-4 col-sm-5 mx-2 rounded bg-light text-center">
           <h3 class="text-center my-3">Project Employees</h3>
           {{!-- display this btn inline with heading --}}
           <a class="d-inline-block my-3 mx-4 btn bg-primary text-white"
@@ -47,7 +49,7 @@
         </div>
 
         {{!-- right flex --}}
-        <div class="border border-dark border-1 p-4 col-sm-7 mx-2 rounded bg-light">
+        <div class="border border-dark border-1 p-4 col-sm-6 mx-2 rounded bg-light">
           <div class="text-center">
           <h3 class="my-3">Project Tasks</h3>
           {{#if isMgr}}
@@ -71,17 +73,7 @@
           </form>
           {{/if}}
 
-          {{#if isMgr}}
-
-          {{#if tasks.length}}
-          {{#each tasks as |task|}}
-          {{> mgr-task-details}}
-          {{/each}}
-          {{else}}
-          <p class="my-2">There are no current tasks.</p>
-          {{/if}}
-
-          {{else}}
+        
           {{#if tasks.length}}
           {{#each tasks as |task|}}
           {{> task-details}}
@@ -89,7 +81,7 @@
           {{else}}
           <p class="my-2">There are no current tasks.</p>
           {{/if}}
-          {{/if}}
+
         </div>
       </div>
     </div>
