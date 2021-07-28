@@ -20,7 +20,6 @@ const signUp = async (event) => {
 
     if (response.ok) {
       document.location.replace('/dashboard');
-      console.log("Created User");
     } else {
       alert("Could not create user, try again.");
     }
