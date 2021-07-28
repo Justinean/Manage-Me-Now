@@ -1,5 +1,8 @@
 <section>
-  <h3>All Company Projects</h3>
+ 
+    <div class="row">
+  <h2 class="mt-3 mb-4 text-center">All Company Projects</h2>
+  <div class="col-sm bg-dark border border-dark rounded my-2 mx-2 p-2"></div>
   <div>
     
     {{#if projects.length}}
@@ -10,17 +13,10 @@
     <p>The company is not working on any projects.</p>
     {{/if}}
   </div>
-  <h3>All Employees</h3>
-  <div>
-    {{#if employees.length}}
-    {{#each employees as |employee|}}
-    {{> employee-list}}
-    {{/each}}
-    {{else}}
-    <p>The company has no employees.</p>
-    {{/if}}
-  </div>
-  <h3>All Managers</h3>
+     <div class="row">
+  <h4 class="mt-3 mb-4 text-center">All Managers</h4>
+  <div class="col-sm bg-dark border border-dark rounded my-2 mx-2 p-2"></div>
+  
   <div>
     {{#if employees.length}}
     {{#each managers as |manager|}}
@@ -31,4 +27,18 @@
     {{/if}}
   </div>
   
+    <div class="row">
+ <h4 class="mt-3 mb-4 text-center">All Employees</h4>
+ <div class="col-sm bg-dark border border-dark rounded my-2 mx-2 p-2"></div>
+  <div>
+    {{#if employees.length}}
+    {{#each employees as |employee|}}
+    {{> employee-list}}
+    {{/each}}
+    {{else}}
+    <p>The company has no employees.</p>
+    {{/if}}
+  </div>
+
 </section>
+
