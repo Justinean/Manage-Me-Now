@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { ProjectEmployee, Project, Task, Employee } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', /* withAuth, */ async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         console.log("Trying to get the dashboard.")
         const projectEmployee = await ProjectEmployee.findAll({
@@ -31,6 +31,7 @@ router.get('/', /* withAuth, */ async (req, res) => {
         res.render('dashboard', {
             projects,
             tasks,
+            email: req.session.email,
             isMgr: req.session.mgr,
             loggedIn: req.session.loggedIn,
             username: req.session.username
@@ -68,6 +69,7 @@ router.get('/newProject', async (req, res) => {
     res.render('dashboard', {
         projects,
         tasks,
+        email: req.session.email,
         isMgr: req.session.mgr,
         loggedIn: req.session.loggedIn,
         username: req.session.username,
@@ -103,6 +105,7 @@ router.get('/:id', withAuth, async (req, res) => {
     res.render('dashboard', {
         projects,
         tasks,
+        email: req.session.email,
         isMgr: req.session.mgr,
         loggedIn: req.session.loggedIn,
         username: employeeData.dataValues.username
