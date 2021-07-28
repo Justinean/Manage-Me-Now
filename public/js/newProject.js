@@ -1,8 +1,6 @@
 const newProject = async event => {
-  console.log("pog")
   event.preventDefault();
   const name = document.querySelector('#newProjectName').value.trim();
-  console.log(name)
   if (name) {
     const response = await fetch('/api/projects/new', {
       method: 'POST',

@@ -1,10 +1,21 @@
 const router = require('express').Router();
-const { Task } = require('../../models');
+const { Task, Employee } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/new', withAuth, async (req, res) => {
+router.post('/new/:id', withAuth, async (req, res) => {
+  console.log("---------------------");
   try {
-    const taskData = await Task.create(req.body.name);
+    const userData = await Employee.findOne({
+      where: {
+        id: req.body.employee_id
+      }
+    });
+    const taskData = await Task.create({
+      name: req.body.name,
+      project_id: req.params.id,
+      task_user: userData.dataValues.username,
+      employee_id: req.body.employee_id
+    });
 
     res.status(200).json(taskData)
   } catch (err) {
