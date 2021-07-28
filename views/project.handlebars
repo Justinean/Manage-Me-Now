@@ -1,6 +1,7 @@
-<section>
+<section class="m-4">
   <div>
     <h3>All Projects</h3>
+    <div class="mt-1 d-flex flex-row flex-wrap justify-content-center">
     {{#if projects.length}}
     {{#each projects as |project|}}
     {{> project-list}}
@@ -8,6 +9,7 @@
     {{else}}
     <p>You have no current projects.</p>
     {{/if}}
+    </div>
   </div>
 
   <p>Current project:
@@ -16,7 +18,7 @@
 
   {{#if isMgr}}
   <div>
-    <button data-id="{{currentProject.id}}" id="deleteProjectBtn">DELETE</button>
+    <a class="d-inline-block my-3 mx-4 btn bg-primary text-white" data-id="{{currentProject.id}}" id="deleteProjectBtn" href="/dashboard/newProject">Delete Project</a>
   </div>
   {{/if}}
 
@@ -42,6 +44,7 @@
   <div>
     <h3>Project Tasks</h3>
     {{#if isMgr}}
+    {{!-- change not link button  --}}
     <a href="/project/newTask{{currentProject.id}}"><button>Add New Task</button></a>
     {{/if}}
 
@@ -56,6 +59,7 @@
         {{> employees-to-add}}
         {{/each}}
       </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     {{/if}}
 
@@ -64,7 +68,7 @@
     {{> task-details}}
     {{/each}}
     {{else}}
-    <p>There are not current tasks.</p>
+    <p>There are no current tasks.</p>
     {{/if}}
   </div>
 </section>

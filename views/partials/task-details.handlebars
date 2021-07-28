@@ -1,8 +1,9 @@
-{{!-- task details --}}
 {{!-- section 1 --}}
-
-<h3>Task assigned to {{taskName}}</h3>
-
+<h3 class="my-3">Task assigned to {{task_user}}</h3>
+{{#if isMgr}}
+TEST
+<i class="btn fas fa-trash-alt" id="deleteTaskTrash" data-id="{{id}}"></i>
+{{/if}}
 
 {{!-- section 2 --}}
 <p>{{name}}</p>
