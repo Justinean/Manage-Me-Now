@@ -36,28 +36,15 @@
   </div> --}}
 
   <section>
-  <h2>{{username}}'s dashboard</h2>
+  <h2>{{username}}'s Dashboard</h2>
   <h3><a class="icon" href="mailto:{{email}}"><i class="far fa-envelope"></i>{{email}}</a></h3>
   <div>
-    <h3>Your projects</h3>
-  {{#if isMgr}}
-  <div>
-    <a href="/dashboard/newProject"><button>Add New Project</button></a>
-  </div>
-  {{/if}}
+    <h3>Current Projects</h3>
 
-{{#if newProject}}
-  <form class="p-2 bg-light border border-dark rounded" id='newProjectForm'>
-        <div class="mb-3 mt-3 mx-3">
-          <label for="newProjectName" class="form-label">New Project Name</label>
-          <input type="text" class="form-control" id="newProjectName" placeholder="Enter New Project Name">
-        </div>
-<div class="mb-3 mx-3">
-            <button class="btn btn-primary">Add Project</button>
-          </div>
-      </form>
-      {{/if}}
-
+  
+    <div>
+      
+       
     {{#if projects.length}}
     {{#each projects as |project|}}
     {{> project-list}}
@@ -65,9 +52,17 @@
     {{else}}
     <p>You have no current projects.</p>
     {{/if}}
+       
+    {{#if isMgr}}
+  <div>
+    <a href="/dashboard/newProject">Add New Project</a>
+  </div>
+  {{/if}}
+    </div>
+
   </div>
   <div>
-    <h3>Your Tasks</h3>
+    <h3>Current Tasks</h3>
     {{#if tasks.length}}
     {{#each tasks as |task|}}
     {{> task-list}}
@@ -76,6 +71,5 @@
     <p>You have no current tasks.</p>
     {{/if}}
   </div>
+  
 </section>
-
-<script src="/js/newProject.js"></script>
