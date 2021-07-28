@@ -73,7 +73,6 @@
           </form>
           {{/if}}
 
-        
           {{#if tasks.length}}
           {{#each tasks as |task|}}
           {{> task-details}}
@@ -95,7 +94,6 @@
 <script src="/js/newTask.js"></script>
 {{/if}}
 {{#if isMgr}}
-<script src="/js/deleteTask.js"></script>
-<script src="/js/deleteProject.js"></script>
+<script src="/js/editProject.js"></script>
 {{/if}}
 {{!-- end of code --}}

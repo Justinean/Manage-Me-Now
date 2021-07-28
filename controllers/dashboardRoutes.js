@@ -4,7 +4,6 @@ const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
     try {
-        console.log("Trying to get the dashboard.")
         const projectEmployee = await ProjectEmployee.findAll({
             where: {
                 employee_id: req.session.userId
