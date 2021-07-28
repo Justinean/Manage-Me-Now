@@ -1,20 +1,122 @@
 [
     {
-        "username": "slat",
-        "email": "randomemail@gmail.com",
+        "username": "mscott",
+        "email": "michaelscott@munderdifflin.com",
         "password": "password",
         "is_manager": true
     },
     {
-        "username": "slat2",
-        "email": "randomemail2@gmail.com",
-        "password": "password2",
+        "username": "dschrute",
+        "email": "dwightschrute@munderdifflin.com",
+        "password": "password",
         "is_manager": true
     },
     {
-        "username": "slat3",
-        "email": "randomemail3@gmail.com",
-        "password": "password3",
+        "username": "jhalpert",
+        "email": "jimhalpert@munderdifflin.com",
+        "password": "password",
+        "is_manager": true
+    },
+    {
+        "username": "pbeesly",
+        "email": "pambeesly@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "cbratton",
+        "email": "creedbratton@munderdifflin.com",
+        "password": "password",
+        "is_manager": true
+    },
+    {
+        "username": "jlevinson",
+        "email": "janlevinson@munderdifflin.com",
+        "password": "password",
+        "is_manager": true
+    },
+    {
+        "username": "ehannon",
+        "email": "erinhannon@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "kmalone",
+        "email": "kevinmalone@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "tflenderson",
+        "email": "tobyflenderson@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "abernard",
+        "email": "andybernard@munderdifflin.com",
+        "password": "password",
+        "is_manager": true
+    },
+    {
+        "username": "amartin",
+        "email": "angelamartin@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "shudson",
+        "email": "stanleyhudson@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "rhoward",
+        "email": "ryanhoward@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "mpalmer",
+        "email": "meredithpalmer@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "kkapoor",
+        "email": "kellykapoor@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "kfilippelli",
+        "email": "karenfilippelli@munderdifflin.com",
+        "password": "password",
+        "is_manager": true
+    },
+    {
+        "username": "randerson",
+        "email": "royanderson@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "dphilbin",
+        "email": "darrylphilbin@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "plvance",
+        "email": "phyllislapinvance@munderdifflin.com",
+        "password": "password",
+        "is_manager": false
+    },
+    {
+        "username": "omartinez",
+        "email": "oscarmartinez@munderdifflin.com",
+        "password": "password",
         "is_manager": false
     }
 ]

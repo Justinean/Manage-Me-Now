@@ -5,13 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manage Me Now</title>
-  <link rel="stylesheet" href="./public/css/reset.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
     integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-  <link rel="stylesheet" href="./public/css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -27,7 +26,7 @@
         <ul class="navbar-nav">
           <!-- home -->
           <li class="nav-item ms-3">
-            <a class="nav-link" href="/"><i class="bi bi-house-door"></i> Home</a>
+            <a class="nav-link ms-3" href="/"><i class="bi bi-house-door"></i> Home</a>
           </li>
           <!-- dashboard  -->
           <li class="nav-item ms-3">
@@ -38,8 +37,9 @@
           {{#if loggedIn}}
           <!-- nav options if logged in -->
           <!-- log out  -->
-          <li class="nav-item ms-5 my-1">
-            <button id="logout" class="rounded-3"><i class="fas fa-sign-out-alt"></i> Log Out</button>
+          <li class="nav-item ms-3">
+            <a class="nav-link ms-3" href="/login" id="logout">
+          <i class="fas fa-sign-out-alt"></i> Log Out</a>
           </li>
           {{else}}
           <!-- nav options if not logged in -->
@@ -65,11 +65,6 @@
   {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}
-
-  <style>@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap');
-body {
-  font-family: "Catamaran", "DM Sans", sans-serif;
-}</style>
 </body>
 
 </html>
