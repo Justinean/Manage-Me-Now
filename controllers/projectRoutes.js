@@ -28,7 +28,7 @@ router.get('/addEmployee/:id', withAuth, async (req, res) => {
         id: req.params.id
       }
     });
-    const currentProject = await currentProjectData.map((project) => project.get({ plain: true }));
+    const currentProject = currentProjectData.get({ plain: true });
   
     // This gets all employees currently assigned to the project.
     const employeesOnProject = await ProjectEmployee.findAll({
@@ -103,7 +103,7 @@ router.get('/newTask/:id', withAuth, async (req, res) => {
         id: req.params.id
       }
     });
-    const currentProject = await currentProjectData.map((project) => project.get({ plain: true }));
+    const currentProject = currentProjectData.get({ plain: true });
   
     // This gets all employees currently assigned to the project.
     const employeesOnProject = await ProjectEmployee.findAll({
