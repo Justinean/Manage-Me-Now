@@ -1,10 +1,10 @@
 <section>
  
-    <div class="row">
-  <h2 class="mt-3 mb-4 text-center">All Company Projects</h2>
-  <div class="col-sm bg-dark border border-dark rounded my-2 mx-2 p-2"></div>
-  <div>
-    
+  <h2 class="mt-4 mb-2 text-center">All Company Projects</h2>
+  <div class="col-sm bg-dark border border-dark rounded mt-2 mb-3 mx-2 p-1">
+  </div>
+
+  <div class="d-flex flex-row justify-content-center">
     {{#if projects.length}}
     {{#each projects as |project|}}
     {{> project-list}}
@@ -13,11 +13,14 @@
     <p>The company is not working on any projects.</p>
     {{/if}}
   </div>
-     <div class="row">
-  <h4 class="mt-3 mb-4 text-center">All Managers</h4>
-  <div class="col-sm bg-dark border border-dark rounded my-2 mx-2 p-2"></div>
-  
-  <div>
+
+
+  <h3 class="mt-5 mb-2 text-center">All Managers</h3>
+  <div class="col-sm bg-dark border border-dark rounded mt-2 mb-3 mx-2 p-1">
+  </div>
+
+
+  <div class="d-flex flex-row justify-content-center">
     {{#if employees.length}}
     {{#each managers as |manager|}}
     {{> employee-list}}
@@ -27,10 +30,12 @@
     {{/if}}
   </div>
   
-    <div class="row">
- <h4 class="mt-3 mb-4 text-center">All Employees</h4>
- <div class="col-sm bg-dark border border-dark rounded my-2 mx-2 p-2"></div>
-  <div>
+ <h3 class="mt-5 mb-2 text-center">All Employees</h3>
+
+ <div class="col-sm bg-dark border border-dark rounded mt-2 mb-3 mx-2 p-1">
+  </div>
+
+  <div class="d-flex flex-row justify-content-center">
     {{#if employees.length}}
     {{#each employees as |employee|}}
     {{> employee-list}}
