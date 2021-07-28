@@ -8,7 +8,7 @@ const logOut = async () => {
   if (response.ok) {
     document.location.replace('/');
   } else {
-    alert(response.statusText);
+    alert("Could not log out, try again.");
   }
 };
 
