@@ -8,6 +8,7 @@ router.post('/signup', async (req, res) => {
     req.session.save(() => {
       req.session.userId = employeeData.dataValues.id;
       req.session.username = employeeData.dataValues.username;
+      req.session.email = employeeData.dataValues.email;
       req.session.mgr = employeeData.dataValues.is_manager;
       req.session.loggedIn = true;
 
@@ -37,6 +38,7 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.userId = employeeData.dataValues.id;
       req.session.username = employeeData.dataValues.username;
+      req.session.email = employeeData.dataValues.email;
       req.session.mgr = employeeData.dataValues.is_manager;
       req.session.loggedIn = true;
 

@@ -59,6 +59,7 @@ router.get('/:id', withAuth, async (req, res) => {
     employees,
     projects,
     tasks,
+    email: req.session.email,
     isMgr: req.session.mgr,
     loggedIn: req.session.loggedIn
   });
@@ -126,6 +127,7 @@ router.get('/addEmployee/:id', withAuth, async (req, res) => {
     employees,
     projects,
     tasks,
+    email: req.session.email,
     addEmployee: true,
     isMgr: req.session.mgr,
     loggedIn: req.session.loggedIn
@@ -194,6 +196,7 @@ router.get('/newTask/:id', withAuth, async (req, res) => {
     employees,
     projects,
     tasks,
+    email: req.session.email,
     newTask: true,
     isMgr: req.session.mgr,
     loggedIn: req.session.loggedIn
