@@ -1,8 +1,22 @@
 <section class="">
   <!-- Link to a project -->
-  <a href="/dashboard/{{id}}">
-    <!-- Contains the employee name -->
-     <div class="btn col-sm bg-light border border-dark rounded my-2 mx-2 p-2 text-center">{{username}}</div>
-
-  </a>
+  <div class="row">
+    {{#if @root.isMgr}}
+    {{#if @root.projectPage}}
+    <a class="col-9 text-decoration-none" href="/dashboard/{{id}}">
+      <!-- Contains the employee name -->
+      <div class="ms-1 my-1 rounded list-group-item text-center">{{username}}
+      </div>
+    </a>
+    <div class="col-2 d-flex pt-2 justify-content-center">
+      <i class="btn bi bi-dash-circle" data-id="{{id}}" id="deleteEmployeeBtn"></i>
+    </div>
+    {{else}}
+    <a class="text-decoration-none" href="/dashboard/{{id}}">
+    <div class="ms-1 my-1 rounded list-group-item text-center">{{username}}
+      </div>
+    </a>
+    {{/if}}
+    {{/if}}
+  </div>
 </section>
