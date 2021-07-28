@@ -55,7 +55,9 @@ router.get('/signup', (req, res) => {
       return;
     }
   
-    res.render('signup');
+    res.render('signup', {
+      signup: true
+    });
   } catch (err) {
     console.log(err);
     res.status(400).json(err);
