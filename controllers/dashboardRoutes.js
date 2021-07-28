@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { ProjectEmployee, Project, Task } = require('../models');
+const { ProjectEmployee, Project, Task, Employee } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', /* withAuth, */ async (req, res) => {
@@ -42,6 +42,7 @@ router.get('/', /* withAuth, */ async (req, res) => {
 });
 
 router.get('/:id', withAuth, async (req, res) => {
+    const employeeData = await Employee.findByPk(req.params.id)
     const projectEmployee = await ProjectEmployee.findAll({
         where: {
             employee_id: req.params.id
@@ -49,9 +50,9 @@ router.get('/:id', withAuth, async (req, res) => {
     });
     const projectArray = [];
     for (i in projectEmployee) {
-        const projectData = await Project.findAll({
+        const projectData = await Project.findOne({
             where: {
-                id: projectEmployee[i].dataValues.id
+                id: projectEmployee[i].dataValues.project_id
             }
         });
         projectArray.push(projectData);
@@ -69,7 +70,8 @@ router.get('/:id', withAuth, async (req, res) => {
         projects,
         tasks,
         isMgr: req.session.mgr,
-        loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn,
+        username: employeeData.dataValues.username
     });
 });
 
@@ -81,9 +83,9 @@ router.get('/newProject', async (req, res) => {
     });
     const projectArray = [];
     for (i in projectEmployee) {
-        const projectData = await Project.findAll({
+        const projectData = await Project.findOne({
             where: {
-                id: projectEmployee[i].dataValues.id
+                id: projectEmployee[i].dataValues.project_id
             }
         });
         projectArray.push(projectData);
@@ -102,6 +104,7 @@ router.get('/newProject', async (req, res) => {
         tasks,
         isMgr: req.session.mgr,
         loggedIn: req.session.loggedIn,
+        username: req.session.username,
         newProject: true
     });
 });
