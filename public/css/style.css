@@ -2,9 +2,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700&family=DM+Sans:wght@400;500;700&display=swap');
 
-/* :root {
-  --header: red;
-} */
+:root {
+  --project-btn: #6096BA;
+  --project-btn-hover: #6096BA;
+  --employee-btn: #A3CEF1;
+  --employee-btn-hover:hsl(263, 10%, 70%);
+  --background:#FFF;
+  --btn-color:#331268;
+  --btn-color:#274C77;
+  --btn-color-hover:#443261;
+}
 
 * {
   margin: 0;
@@ -13,4 +20,46 @@
 
 body {
   font-family: "Catamaran", "DM Sans", sans-serif;
+  background-color: var(--background);
+}
+
+.headerLogo {
+  height: 30px;
+}
+
+.btn-color {
+background-color: var(--btn-color);
+color: white;
+border: none;
+padding: 6px 12px;
+}
+
+.btn-color:hover {
+  background-color: var(--btn-color-hover);
+  color: white;
+}
+
+.project-btn {
+  font-weight: 600;
+  box-shadow: 2px 2px 2px #222629;
+  color: #FFF;
+  background-color: var(--project-btn);
+}
+
+.project-btn:hover {
+background-color: var(--project-btn-hover)
+}
+
+.employee-btn {
+  font-weight: 600;
+  box-shadow: 2px 2px 2px #222629;
+  background-color: var(--employee-btn);
+}
+
+.employee-btn:hover {
+background-color: var(--employee-btn-hover)
+}
+
+.col-color {
+  background-color: #ededed;
 }

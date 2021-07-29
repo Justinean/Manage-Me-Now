@@ -11,47 +11,49 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
     integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/png" href="https://manage-me-now-images.s3.us-east-2.amazonaws.com/favicon.png"/>
 </head>
 
 <body>
   <!-- header  -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand ms-3" href="/">Manage Me Now</a>
+      <a class="navbar-brand ms-3" href="/">
+        <img src="https://manage-me-now-images.s3.us-east-2.amazonaws.com/mmnLogo.jpg" alt="Manage Me Now Logo"
+          class="headerLogo me-2">
+        Manage Me Now</a>
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse ms-3" id="navbarNav">
+      <div class="collapse navbar-collapse ms-4" id="navbarNav">
         <ul class="navbar-nav">
           <!-- home -->
-          <li class="nav-item ms-3">
-            <a class="nav-link ms-3" href="/"><i class="bi bi-house-door"></i> Home</a>
+          <li class="nav-item">
+            <a class="nav-link ms-4" href="/"><i class="bi bi-house-door"></i> Home</a>
           </li>
           <!-- dashboard  -->
-          <li class="nav-item ms-3">
-            <a class="nav-link ms-3" href="/dashboard"><i class="bi bi-speedometer"></i> Dashboard</a>
-            <!-- contact -->
-          <li class="nav-item ms-3">
-            <a class="nav-link ms-3" href="/contactus"><i class="far fa-envelope"></i> Contact Us</a>
-          {{#if loggedIn}}
-          <!-- nav options if logged in -->
-          <!-- log out  -->
-          <li class="nav-item ms-3">
-            <a class="nav-link ms-3" href="/login" id="logout">
-          <i class="fas fa-sign-out-alt"></i> Log Out</a>
+          <li class="nav-item">
+            <a class="nav-link ms-4" href="/dashboard"><i class="bi bi-speedometer"></i> Dashboard</a>
+            {{#if loggedIn}}
+            <!-- nav options if logged in -->
+            <!-- log out  -->
+          <li class="nav-item">
+            <a class="nav-link ms-4" href="/login" id="logout">
+              <i class="fas fa-sign-out-alt"></i> Log Out</a>
           </li>
           {{else}}
           <!-- nav options if not logged in -->
           {{#if signUp}}
           <!-- log in -->
-          <li class="nav-item ms-3">
-            <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> Log In</a>
+          <li class="nav-item">
+            <a class="nav-link ms-4" href="/login"><i class="fas fa-sign-in-alt"></i> Log In</a>
           </li>
           {{else}}
           <!-- sign up -->
-          <li class="nav-item ms-3">
-            <a class="nav-link" href="/signup"><i class="fas fa-user-plus"></i> Sign Up</a>
+          <li class="nav-item">
+            <a class="nav-link ms-4" href="/signup"><i class="fas fa-user-plus"></i> Sign Up</a>
           </li>
           {{/if}}
           {{/if}}
