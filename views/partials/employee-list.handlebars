@@ -4,12 +4,12 @@
     {{#if @root.projectPage}}
     <a class="col-9 text-decoration-none" href="/dashboard/{{id}}">
       <!-- Contains the employee name -->
-      <div class="ms-1 my-1 py-1 rounded list-group-item text-center employee-btn">{{username}}
+      <div class="ms-1 my-1 py-1 rounded list-group-item text-center employee-on-project">{{username}}
       </div>
     </a>
     {{#if @root.isMgr}}
     <div class="col-2 d-flex pt-2 justify-content-center">
-      <i class="btn bi bi-dash-circle" data-id="{{id}}" id="deleteEmployeeBtn"></i>
+      <i class="btn hover-white bi bi-x-square-fill" data-id="{{id}}" id="deleteEmployeeBtn"></i>
     </div>
     {{/if}}
     {{else}}
