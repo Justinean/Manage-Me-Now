@@ -55,7 +55,11 @@ A web application for managing your employees, projects, and tasks.
 - Click on project names to access the employee and task lists for each, including the ability to add and delete employees and tasks from projects.
 - Clicking on any employee name will bring you to their dashboard, so you can view current projects and tasks that they are on.
 
-![Screenshot of finished project.](relativeLink)
+![Dashboard](public/images/screenshot_1.png)
+
+![Project Dashboard](public/images/screenshot_2.png)
+
+![Home Page](public/images/screenshot_3.png)
 
 ## Credits
 - Collaborators

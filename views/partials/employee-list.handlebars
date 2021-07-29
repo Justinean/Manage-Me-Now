@@ -9,12 +9,12 @@
     </a>
     {{#if @root.isMgr}}
     <div class="col-2 d-flex pt-2 justify-content-center">
-      <i class="btn hover-white bi bi-x-square-fill" data-id="{{id}}" id="deleteEmployeeBtn"></i>
+      <i class="btn hover-white bi bi-x-square-fill deleteEmployeeBtn" data-id="{{id}}"></i>
     </div>
     {{/if}}
     {{else}}
     <a class="text-decoration-none" href="/dashboard/{{id}}">
-    <div class="employee-btn mx-2 py-1 my-2 rounded list-group-item text-center">{{username}}
+      <div class="employee-btn mx-2 py-1 my-2 rounded list-group-item text-center">{{username}}
       </div>
     </a>
     {{/if}}
