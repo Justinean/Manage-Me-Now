@@ -1,9 +1,11 @@
 const router = require('express').Router();
 const { Employee } = require('../../models');
+// Requires packages needed for uploading images to an AWS server.
 const AWS = require('aws-sdk');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 
+// This allows you to access the AWS server for images when running a local server.
 const SESConfig = {
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
   accessSecretKey: process.env.AWS_SECRET_ACCESS_KEY,
@@ -13,6 +15,7 @@ const SESConfig = {
 AWS.config.update(SESConfig);
 const s3 = new AWS.S3({});
 
+// This sets the upload parameters for uploaded images.
 const upload = multer({
   storage: multerS3({
     s3: s3,
@@ -24,6 +27,7 @@ const upload = multer({
   })
 });
 
+// This will post the uploaded image.
 router.post('/upload', upload.single('photo'), (req, res) => {
   if (req.file) {
     res.redirect('/dashboard');
@@ -32,6 +36,7 @@ router.post('/upload', upload.single('photo'), (req, res) => {
   }
 });
 
+// This route will post the employee sign up data.
 router.post('/signup', async (req, res) => {
   try {
     const employeeData = await Employee.create(req.body);
@@ -51,6 +56,7 @@ router.post('/signup', async (req, res) => {
   }
 });
 
+// This route will post the employee login data.
 router.post('/login', async (req, res) => {
   try {
     const employeeData = await Employee.findOne({
@@ -61,7 +67,7 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPW = await employeeData.checkPassword(req.body.password);
+    const validPW = employeeData.checkPassword(req.body.password);
     if (!validPW) {
       res.status(400).json({ message: "Incorrect username or password; please try again." });
       return;
@@ -82,6 +88,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// This route will post the employee logout data.
 router.post('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {

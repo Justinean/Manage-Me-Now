@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { Task, Employee } = require('../../models');
+const { Employee, Task } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// This route will post a new task.
 router.post('/new/:id', withAuth, async (req, res) => {
   try {
     const userData = await Employee.findOne({
@@ -9,6 +10,7 @@ router.post('/new/:id', withAuth, async (req, res) => {
         id: req.body.employee_id
       }
     });
+
     const taskData = await Task.create({
       name: req.body.name,
       project_id: req.params.id,
@@ -23,6 +25,7 @@ router.post('/new/:id', withAuth, async (req, res) => {
   }
 });
 
+// This route will delete a task.
 router.delete('/delete/:id', withAuth, async (req, res) => {
   try {
     await Task.destroy({
@@ -30,6 +33,7 @@ router.delete('/delete/:id', withAuth, async (req, res) => {
         id: req.params.id
       }
     });
+
     res.json(200).json({ message: "Task deleted!" });
   } catch (err) {
     console.log(err);

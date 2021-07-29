@@ -7,7 +7,7 @@ const projectRoutes = require('./projectRoutes');
 
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
-router.use('/dashboard', dashboardRoutes)
+router.use('/dashboard', dashboardRoutes);
 router.use('/project', projectRoutes);
 
 module.exports = router;
