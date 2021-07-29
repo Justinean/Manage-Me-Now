@@ -6,13 +6,14 @@
     <img class="m-3" src="https://via.placeholder.com/250" alt="">
     {{/if}}
     {{#if myDash}}
-    <form action="/api/employees/upload" method="post" enctype="multipart/form-data">
+    <form action="/api/employees/upload" method="post" enctype="multipart/form-data" class="my-4">
       <div class="form-group">
         <input type="file" accept="image/*" name="photo" class="form-control-file" id="imageUpload">
-        <input type="submit" value="upload">
+        <input type="submit" value="Upload Photo" class="rounded px-2 btn-color">
       </div>
     </form>
     {{/if}}
+    <hr>
 
     <h2 class="mb-3">{{username}}'s Dashboard</h2>
 

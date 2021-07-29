@@ -25,17 +25,17 @@
 
     {{!-- flex container --}}
     <div class="container-fluid d-flex flex-column m-0 mb-5">
-      {{!-- left flex --}}
       <div class="row justify-content-center">
-        <div class="border border-dark border-1 p-4 col-sm-5 mx-2 rounded bg-light text-center">
+      {{!-- left flex --}}
+        <div class="border border-dark border-1 p-4 col-sm-5 mx-2 rounded col-color text-center">
           <h3 class="text-center my-3">Project Employees</h3>
           {{!-- display this btn inline with heading --}}
-          <a class="d-inline-block my-3 mx-4 btn btn-color"
+          <a class="d-inline-block mt-3 mb-5 mx-4 btn btn-color"
             href="/project/addEmployee/{{currentProject.id}}">Add New Employee</a>
 
           {{!-- all employees on project --}}
           {{#if addEmployee}}
-          <form id="newEmployeeForm" class="p-2 bg-light border border-dark rounded">
+          <form id="newEmployeeForm" class="p-3 mb-3 bg-light border border-dark rounded">
             {{#each allEmployees as |allEmployee|}}
             {{> employees-to-add}}
             {{/each}}
@@ -49,7 +49,7 @@
         </div>
 
         {{!-- right flex --}}
-        <div class="border border-dark border-1 p-4 col-sm-6 mx-2 rounded bg-light">
+        <div class="border border-dark border-1 p-4 col-sm-6 mx-2 rounded col-color">
           <div class="text-center">
           <h3 class="my-3">Project Tasks</h3>
           {{#if isMgr}}
