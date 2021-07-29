@@ -9,7 +9,6 @@ router.post('/new', withAuth, async (req, res) => {
       project_id: projectData.dataValues.id,
       employee_id: req.session.userId
     })
-    console.log(projectData, projectEmployee)
     res.json(200).json(projectData);
   } catch (err) {
     console.log(err)
@@ -18,7 +17,6 @@ router.post('/new', withAuth, async (req, res) => {
 });
 
 router.put('/edit/:id', withAuth, async (req, res) => {
-  console.log(req.body);
   try {
     await ProjectEmployee.create({
       project_id: req.params.id,
@@ -27,6 +25,21 @@ router.put('/edit/:id', withAuth, async (req, res) => {
     res.json(200).json({ message: "You've added an employee!"});
   } catch (err) {
     console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+router.delete('/remove/employee/:id', withAuth, async (req, res) => {
+  try {
+    await ProjectEmployee.destroy({
+      where: {
+        employee_id: req.params.id,
+        project_id: req.body.project_id
+      }
+    });
+    res.json(200).json({ message: "Project deleted!" });
+  } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
