@@ -14,3 +14,21 @@
 body {
   font-family: "Catamaran", "DM Sans", sans-serif;
 }
+
+.headerLogo {
+  height: 30px;
+}
+
+.btn-color {
+background-color: red;
+color: white;
+}
+
+.btn-color:hover {
+  background-color: aqua;
+}
+
+.project-btn {
+  font-weight: 600;
+  box-shadow: 2px 2px 2px #000;
+}
