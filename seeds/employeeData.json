@@ -67,7 +67,7 @@
     "username": "abernard",
     "email": "andybernard@munderdifflin.com",
     "password": "password",
-    "is_manager": true
+    "is_manager": false
   },
   {
     "id": 11,
@@ -109,7 +109,7 @@
     "username": "kfilippelli",
     "email": "karenfilippelli@munderdifflin.com",
     "password": "password",
-    "is_manager": true
+    "is_manager": false
   },
   {
     "id": 17,

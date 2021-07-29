@@ -1,62 +1,104 @@
 [
-    {
-        "name": "Identity theft training." 
-    },
-    {
-        "name": "Have Pam order more paper."
-    },
-    {
-        "name": "CPR training course."
-    },
-    {
-        "name": "Schedule annual Dundies."
-    },
-    {
-        "name": "Run a background check on Creed."
-    },
-    {
-        "name": "Clean the microwave."
-    },
-    {
-        "name": "Check Stanley's blood pressure."
-    },
-    {
-        "name": "Sales Meeting."
-    },
-    {
-        "name": "Change the garbages."
-    },
-    {
-        "name": "Have Darryl train new warehouse associates"
-    },
-    {
-        "name": "Get supplies for the end of summer party."
-    },
-    {
-        "name": "Clean Micheal's office."
-    },
-    {
-        "name": "Schedule pretzel day."
-    },
-    {
-        "name": "Call Vance Refrigeration to bring new Fridge."
-    },
-    {
-        "name": "Order beats from Schrute Farms."
-    },
-    {
-        "name": "Order more pens."
-    },
-    {
-        "name": "Put new software on each computer."
-    },
-    {
-        "name": "Buy tik taks for training Dwight."
-    },
-    {
-        "name": "Shred paper"
-    },
-    {
-        "name": "Teach Michael how to tie his shoes."
-    }
+  {
+    "name": "Identity theft training."
+  },
+  {
+    "name": "Have Pam order more paper."
+  },
+  {
+    "name": "CPR training course."
+  },
+  {
+    "name": "Schedule annual Dundies."
+  },
+  {
+    "name": "Run a background check on Creed."
+  },
+  {
+    "name": "Clean the microwave."
+  },
+  {
+    "name": "Check Stanley's blood pressure."
+  },
+  {
+    "name": "Sales Meeting."
+  },
+  {
+    "name": "Change the garbages."
+  },
+  {
+    "name": "Have Darryl train new warehouse associates"
+  },
+  {
+    "name": "Get supplies for the end of summer party."
+  },
+  {
+    "name": "Clean Michael's office."
+  },
+  {
+    "name": "Schedule pretzel day."
+  },
+  {
+    "name": "Call Vance Refrigeration to bring new Fridge."
+  },
+  {
+    "name": "Order beats from Schrute Farms."
+  },
+  {
+    "name": "Order more pens."
+  },
+  {
+    "name": "Put new software on each computer."
+  },
+  {
+    "name": "Buy tic tacs for training Dwight."
+  },
+  {
+    "name": "Shred paper."
+  },
+  {
+    "name": "Teach Michael how to tie his shoes."
+  },
+  {
+    "name": "Check voicemails."
+  },
+  {
+    "name": "Steal Dwight's bobblehead."
+  },
+  {
+    "name": "Induct Dwight as 'Honorary Security Advisor."
+  },
+  {
+    "name": "Hide Andy's things."
+  },
+  {
+    "name": "Make batch of chili."
+  },
+  {
+    "name": "Build quad desk."
+  },
+  {
+    "name": "Put Dwight's things in vending machine."
+  },
+  {
+    "name": "Send faxes to Dwight from future Dwight."
+  },
+  {
+    "name": "Put stapler in jello."
+  },
+  {
+    "name": "Call coroporate to make excuses for bad sales."
+  },
+  {
+    "name": "Hack server password."
+  },
+  {
+    "name": "Build Recyclops."
+  },
+  {
+    "name": "Punch Toby."
+  },
+  {
+    "name": "Make sales call."
+  }
 ]

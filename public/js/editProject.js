@@ -1,8 +1,8 @@
 // This function will delete an entire project.
 async function deleteProject(event) {
-  const id = event.target.getAttribute('data-id');
+  const id1 = event.target.getAttribute('data-id');
 
-  const response = await fetch(`/api/projects/delete/${id}`, {
+  const response = await fetch(`/api/projects/delete/${id1}`, {
     method: 'DELETE',
   });
 
@@ -15,10 +15,10 @@ async function deleteProject(event) {
 
 // This function will delete an entire task.
 async function deleteTask(event) {
-  const id = event.target.getAttribute('data-id');
+  const id2 = event.target.getAttribute('data-id');
   const projectId = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
-  const response = await fetch(`/api/tasks/delete/${id}`, {
+  const response = await fetch(`/api/tasks/delete/${id2}`, {
     method: 'DELETE',
   });
 
@@ -31,10 +31,10 @@ async function deleteTask(event) {
 
 // This function will remove an employee from a project.
 async function removeEmployee(event) {
-  const id = event.target.getAttribute('data-id');
+  const id3 = event.target.getAttribute('data-id');
   const projectId = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
-  const response = await fetch(`/api/projects/remove/employee/${id}`, {
+  const response = await fetch(`/api/projects/remove/employee/${id3}`, {
     method: 'DELETE',
     body: JSON.stringify({ projectId }),
     headers: { 'Content-Type': 'application/json' }
@@ -47,6 +47,14 @@ async function removeEmployee(event) {
   }
 };
 
-document.querySelector('#deleteEmployeeBtn').addEventListener('click', removeEmployee);
+const employeeBtns = document.querySelectorAll('.deleteEmployeeBtn');
+employeeBtns.forEach((currentBtn) => {
+  currentBtn.addEventListener('click', removeEmployee);
+});
+
+const taskBtns = document.querySelectorAll('.deleteTaskBtn');
+taskBtns.forEach((currentBtn) => {
+  currentBtn.addEventListener('click', deleteTask);
+});
+
 document.querySelector('#deleteProjectBtn').addEventListener('click', deleteProject);
-document.querySelector('#deleteTaskBtn').addEventListener('click', deleteTask);
