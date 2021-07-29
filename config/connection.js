@@ -4,8 +4,8 @@ require('dotenv').config();
 let sequelize;
 
 // Will make sure if we are using a deployed server that it uses those enviromental variables.
-if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
+if (process.env.JAWSDB_BLACK_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_BLACK_URL);
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
