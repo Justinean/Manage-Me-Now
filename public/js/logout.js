@@ -1,8 +1,10 @@
-const logOut = async () => {
+// This function will log you out of the application.
+async function logOut() {
   const response = await fetch('/api/employees/logout', {
     method: 'POST',
-    headers: { 
-      'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json'
+    },
   });
 
   if (response.ok) {

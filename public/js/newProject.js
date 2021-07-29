@@ -1,6 +1,9 @@
-const newProject = async event => {
+// This function will create a new project.
+async function newProject(event) {
   event.preventDefault();
+
   const name = document.querySelector('#newProjectName').value.trim();
+
   if (name) {
     const response = await fetch('/api/projects/new', {
       method: 'POST',
