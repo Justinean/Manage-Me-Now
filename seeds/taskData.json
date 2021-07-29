@@ -1,17 +1,62 @@
 [
-  {
-    "name": "actually seed the database"
-  },
-  {
-    "name": "actually delete the database"
-  },
-  {
-    "name": "actually create the database"
-  },
-  {
-    "name": "create user interfaces"
-  },
-  {
-    "name": "check off this task"
-  }
+    {
+        "name": "Identity theft training." 
+    },
+    {
+        "name": "Have Pam order more paper."
+    },
+    {
+        "name": "CPR training course."
+    },
+    {
+        "name": "Schedule annual Dundies."
+    },
+    {
+        "name": "Run a background check on Creed."
+    },
+    {
+        "name": "Clean the microwave."
+    },
+    {
+        "name": "Check Stanley's blood pressure."
+    },
+    {
+        "name": "Sales Meeting."
+    },
+    {
+        "name": "Change the garbages."
+    },
+    {
+        "name": "Have Darryl train new warehouse associates"
+    },
+    {
+        "name": "Get supplies for the end of summer party."
+    },
+    {
+        "name": "Clean Micheal's office."
+    },
+    {
+        "name": "Schedule pretzel day."
+    },
+    {
+        "name": "Call Vance Refrigeration to bring new Fridge."
+    },
+    {
+        "name": "Order beats from Schrute Farms."
+    },
+    {
+        "name": "Order more pens."
+    },
+    {
+        "name": "Put new software on each computer."
+    },
+    {
+        "name": "Buy tik taks for training Dwight."
+    },
+    {
+        "name": "Shred paper"
+    },
+    {
+        "name": "Teach Michael how to tie his shoes."
+    }
 ]
