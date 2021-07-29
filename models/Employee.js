@@ -7,7 +7,7 @@ class Employee extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
-}
+};
 
 Employee.init(
   {
@@ -23,7 +23,7 @@ Employee.init(
       unique: true,
       validate: {
         isAlphanumeric: true,
-        len: [0,16],
+        len: [0, 16],
       }
     },
     is_manager: {
@@ -43,7 +43,7 @@ Employee.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [8,16],
+        len: [8, 16],
       }
     }
   },
@@ -53,7 +53,10 @@ Employee.init(
         newEmployeeData.password = await newEmployeeData.password.trim();
         newEmployeeData.password = await bcrypt.hash(newEmployeeData.password, 10);
 
+        newEmployeeData.username = await newEmployeeData.username.trim();
         newEmployeeData.username = await newEmployeeData.username.toLowerCase();
+
+        newEmployeeData.email = await newEmployeeData.email.trim();
         newEmployeeData.email = await newEmployeeData.email.toLowerCase();
 
         return newEmployeeData;

@@ -1,17 +1,17 @@
 [
-    {
-        "name": "actually seed the database"
-    },
-    {
-        "name": "actually delete the database"
-    },
-    {
-        "name": "actually create the database"
-    },
-    {
-        "name": "create user interfaces"
-    },
-    {
-        "name": "check off this task"
-    }
+  {
+    "name": "actually seed the database"
+  },
+  {
+    "name": "actually delete the database"
+  },
+  {
+    "name": "actually create the database"
+  },
+  {
+    "name": "create user interfaces"
+  },
+  {
+    "name": "check off this task"
+  }
 ]
