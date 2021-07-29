@@ -4,7 +4,7 @@
     {{#if @root.projectPage}}
     <a class="col-9 text-decoration-none" href="/dashboard/{{id}}">
       <!-- Contains the employee name -->
-      <div class="ms-1 my-1 rounded list-group-item text-center">{{username}}
+      <div class="ms-1 my-1 py-1 rounded list-group-item text-center employee-btn">{{username}}
       </div>
     </a>
     {{#if @root.isMgr}}
@@ -14,7 +14,7 @@
     {{/if}}
     {{else}}
     <a class="text-decoration-none" href="/dashboard/{{id}}">
-      <div class="ms-1 my-1 rounded list-group-item text-center">{{username}}
+    <div class="employee-btn mx-2 py-1 my-2 rounded list-group-item text-center">{{username}}
       </div>
     </a>
     {{/if}}
