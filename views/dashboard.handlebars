@@ -20,10 +20,12 @@
   </div>
   <hr>
   <div class="mt-5">
-    <h3 class="d-inline">Current Projects</h3> 
-        {{#if isMgr}}
+    <h3 class="d-inline">Current Projects</h3>
+    {{#if isMgr}}
+    {{#if myDash}}
     <a class="d-inline-block my-3 mx-4 btn btn-color" href="/dashboard/newProject">Add New Project</a>
-        {{/if}}
+    {{/if}}
+    {{/if}}
 
     <div class="mt-1 d-flex flex-row flex-wrap justify-content-center">
       {{#if projects.length}}
@@ -42,9 +44,9 @@
           <input type="text" class="form-control" id="newProjectName" placeholder="Enter New Project Name">
         </div>
 
-<div class="mb-3 mx-3">
-            <button class="btn btn-color">Add Project</button>
-          </div>
+        <div class="mb-3 mx-3">
+          <button class="btn btn-color">Add Project</button>
+        </div>
       </form>
       {{/if}}
     </div>
