@@ -18,7 +18,7 @@
     <div class="ms-3 p-4 my-3">
     <h3 class="d-inline">Project: {{currentProject.name}}</h3>
     {{#if isMgr}}
-    <a class="d-inline-block my-3 mx-4 btn bg-primary text-white" data-id="{{currentProject.id}}" id="deleteProjectBtn"
+    <a class="d-inline-block my-3 mx-4 btn btn-color" data-id="{{currentProject.id}}" id="deleteProjectBtn"
       href="/dashboard/newProject">Delete Project</a>
     {{/if}}
     </div>
@@ -30,7 +30,7 @@
         <div class="border border-dark border-1 p-4 col-sm-5 mx-2 rounded bg-light text-center">
           <h3 class="text-center my-3">Project Employees</h3>
           {{!-- display this btn inline with heading --}}
-          <a class="d-inline-block my-3 mx-4 btn bg-primary text-white"
+          <a class="d-inline-block my-3 mx-4 btn btn-color"
             href="/project/addEmployee/{{currentProject.id}}">Add New Employee</a>
 
           {{!-- all employees on project --}}
@@ -39,7 +39,7 @@
             {{#each allEmployees as |allEmployee|}}
             {{> employees-to-add}}
             {{/each}}
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-color">Submit</button>
           </form>
           {{/if}}
 
@@ -53,7 +53,7 @@
           <div class="text-center">
           <h3 class="my-3">Project Tasks</h3>
           {{#if isMgr}}
-          <a class="my-3 mx-4 btn bg-primary text-white"
+          <a class="my-3 mx-4 btn btn-color"
             href="/project/newTask/{{currentProject.id}}">Add New Task</a>
             </div>
 
@@ -69,7 +69,7 @@
               {{> employees-to-add}}
               {{/each}}
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-color">Submit</button>
           </form>
           {{/if}}
 
