@@ -1,11 +1,32 @@
 [
     {
-        "name": "Seed the database"
+        "name": "Beat Staples in sales this month."
     },
     {
-        "name": "Delete the database"
+        "name": "Update fire drill protocol."
     },
     {
-        "name": "Create the database"
+        "name": "Gain 100 more clients this month."
+    },
+    {
+        "name": "Update the company website"
+    },
+    {
+        "name": "Send emails to each client about our new promotions."
+    },
+    {
+        "name": "Plan end of summer party"
+    },
+    {
+        "name": "Paint the Annenx"
+    },
+    {
+        "name": "Work on Threat Level Midnight."
+    },
+    {
+        "name": "Mentor intern Ryan."
+    },
+    {
+        "name": "Team building excersices."
     }
 ]
