@@ -74,6 +74,17 @@
           </form>
           {{/if}}
 
+          {{#if isMgr}}
+
+          {{#if tasks.length}}
+          {{#each tasks as |task|}}
+          {{> mgr-task-details}}
+          {{/each}}
+          {{else}}
+          <p class="my-2">There are no current tasks.</p>
+          {{/if}}
+
+          {{else}}
           {{#if tasks.length}}
           {{#each tasks as |task|}}
           {{> task-details}}
@@ -81,7 +92,7 @@
           {{else}}
           <p class="my-2">There are no current tasks.</p>
           {{/if}}
-
+          {{/if}}
         </div>
       </div>
     </div>
@@ -95,6 +106,7 @@
 <script src="/js/newTask.js"></script>
 {{/if}}
 {{#if isMgr}}
-<script src="/js/editProject.js"></script>
+<script src="/js/deleteTask.js"></script>
+<script src="/js/deleteProject.js"></script>
 {{/if}}
 {{!-- end of code --}}

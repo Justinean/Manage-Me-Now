@@ -69,7 +69,6 @@ router.get('/addEmployee/:id', withAuth, async (req, res) => {
       addEmployee: true,
       isMgr: req.session.mgr,
       loggedIn: req.session.loggedIn,
-      projectPage: true,
       username: req.session.username
     });
   } catch (err) {
@@ -145,7 +144,6 @@ router.get('/newTask/:id', withAuth, async (req, res) => {
       newTask: true,
       isMgr: req.session.mgr,
       loggedIn: req.session.loggedIn,
-      projectPage: true,
       username: req.session.username
     });
   } catch (err) {
@@ -215,7 +213,6 @@ router.get('/:id', withAuth, async (req, res) => {
       email: req.session.email,
       isMgr: req.session.mgr,
       loggedIn: req.session.loggedIn,
-      projectPage: true,
       username: req.session.username
     });
   } catch (err) {

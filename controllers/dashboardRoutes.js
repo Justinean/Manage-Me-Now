@@ -7,6 +7,7 @@ let imageId;
 
 router.get('/', withAuth, async (req, res) => {
     try {
+<<<<<<< HEAD
         imageId = req.session.userId;
         const response = await fetch(`https://manage-me-now-images.s3.us-east-2.amazonaws.com/${imageId}.jpg`, {
             method: 'HEAD'
@@ -16,6 +17,9 @@ router.get('/', withAuth, async (req, res) => {
         } else {
             imageExists = false;
         }
+=======
+        console.log("Trying to get the dashboard.")
+>>>>>>> parent of 15af828 (Added functionality for removing employees from project.)
         const projectEmployee = await ProjectEmployee.findAll({
             where: {
                 employee_id: req.session.userId
