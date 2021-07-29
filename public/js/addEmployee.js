@@ -1,3 +1,4 @@
+// This function will add an employee to a project.
 async function addEmployee(event) {
   event.preventDefault();
 

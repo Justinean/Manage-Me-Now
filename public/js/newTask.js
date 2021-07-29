@@ -1,9 +1,10 @@
-const newTask = async event => {
+// This function will create a new task.
+async function newTask(event) {
   event.preventDefault();
 
   const name = document.querySelector('#newTaskInput').value.trim();
   const project_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
-  const employee_id = document.querySelector(':checked').value; 
+  const employee_id = document.querySelector(':checked').value;
 
   const response = await fetch(`/api/tasks/new/${project_id}`, {
     method: 'POST',

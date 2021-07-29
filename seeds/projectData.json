@@ -1,11 +1,11 @@
 [
-    {
-        "name": "Seed the database"
-    },
-    {
-        "name": "Delete the database"
-    },
-    {
-        "name": "Create the database"
-    }
+  {
+    "name": "Seed the database"
+  },
+  {
+    "name": "Delete the database"
+  },
+  {
+    "name": "Create the database"
+  }
 ]

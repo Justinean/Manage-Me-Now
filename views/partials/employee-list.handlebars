@@ -1,22 +1,22 @@
 <section class="">
   <!-- Link to a project -->
   <div class="row">
-    {{#if @root.isMgr}}
     {{#if @root.projectPage}}
     <a class="col-9 text-decoration-none" href="/dashboard/{{id}}">
       <!-- Contains the employee name -->
       <div class="ms-1 my-1 py-1 rounded list-group-item text-center employee-btn">{{username}}
       </div>
     </a>
+    {{#if @root.isMgr}}
     <div class="col-2 d-flex pt-2 justify-content-center">
       <i class="btn bi bi-dash-circle" data-id="{{id}}" id="deleteEmployeeBtn"></i>
     </div>
+    {{/if}}
     {{else}}
     <a class="text-decoration-none" href="/dashboard/{{id}}">
     <div class="employee-btn mx-2 py-1 my-2 rounded list-group-item text-center">{{username}}
       </div>
     </a>
-    {{/if}}
     {{/if}}
   </div>
 </section>
