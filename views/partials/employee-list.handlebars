@@ -1,19 +1,27 @@
-<section class="">
-  <!-- Link to a project -->
+<section>
+  {{!-- Link to a project --}}
   <div class="row">
+    {{!-- If on the project page --}}
     {{#if @root.projectPage}}
+    {{!-- Link to an employee by id --}}
     <a class="col-9 text-decoration-none" href="/dashboard/{{id}}">
-      <!-- Contains the employee name -->
+      {{!-- Employee username --}}
       <div class="ms-1 my-1 py-1 rounded list-group-item text-center employee-on-project">{{username}}
       </div>
     </a>
+    {{!-- If user is manager --}}
     {{#if @root.isMgr}}
+    {{!-- Show this div with button to remove employee --}}
     <div class="col-2 d-flex pt-2 justify-content-center">
+      {{!-- Assign data-id of icon to id of employee --}}
       <i class="btn hover-white bi bi-x-square-fill deleteEmployeeBtn" data-id="{{id}}"></i>
     </div>
     {{/if}}
     {{else}}
+    {{!-- If not on the project page, show only the username, with different CSS than above --}}
+    {{!-- Link to an employee by id --}}
     <a class="text-decoration-none" href="/dashboard/{{id}}">
+    {{!-- Employee username --}}
       <div class="employee-btn mx-2 py-1 my-2 rounded list-group-item text-center">{{username}}
       </div>
     </a>

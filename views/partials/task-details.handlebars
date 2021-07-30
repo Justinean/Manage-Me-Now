@@ -1,16 +1,20 @@
-{{!-- assigned to --}}
 <div class="my-3 rounded list-group-item container">
   <div class="row">
+    {{!-- Assigned to which employee --}}
     <h3 class="text-start col-10 my-3">Assigned to {{task_user}}</h3>
+    {{!-- If on project page --}}
     {{#if @root.projectPage}}
+    {{!-- If a manager --}}
     {{#if @root.isMgr}}
+    {{!-- Show a trash can for deleting the task --}}
     <div class="col-2 px-1 text-end">
+      {{!-- Assign id to be data-id of icon --}}
       <i class="mt-3 btn fas fa-trash-alt deleteTaskBtn" data-id="{{id}}"></i>
     </div>
     {{/if}}
     {{/if}}
     <hr>
-    {{!-- task name --}}
+    {{!-- Task name --}}
     <div class="text-start">{{name}}</div>
   </div>
 </div>
