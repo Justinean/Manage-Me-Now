@@ -2,13 +2,15 @@
   <div class="row mt-5 pt-3 mx-3">
     <div class="col-sm mx-1 mb-3">
       <h2 class="mb-3">Sign Up</h2>
+      {{!-- Link to log in page --}}
       <p>
         Sign up for a Manage Me Now account to start keeping track of your teams and projects. If you already have a
         Manage Me Now account, <a href="/login">log in here</a>.
       </p>
     </div>
     <div class="col-sm mx-1">
-      <form class="p-2 bg-light border border-dark rounded" id='signUpForm'>
+      {{!-- Sign up form --}}
+      <form class="p-2 bg-lightgrey border border-dark rounded" id='signUpForm'>
         <div class="mb-3 mt-3 mx-3">
           <label for="signUpEmail" class="form-label">Email</label>
           <input type="email" class="form-control" id="signUpEmail" placeholder="Enter your email">
@@ -25,7 +27,6 @@
           <label for="signUpPassword" class="form-label">Password, 8 - 16 characters</label>
           <input type="password" class="form-control" id="signUpPassword" placeholder="Create a password">
         </div>
-
         <div class="mb-3 mx-3">
           <button type="submit" class="btn btn-color">Sign Up</button>
         </div>
@@ -33,4 +34,5 @@
     </div>
   </div>
 </div>
+{{!-- Sign up JS is available --}}
 <script src="/js/signup.js"></script>

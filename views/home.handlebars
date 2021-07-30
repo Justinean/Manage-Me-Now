@@ -1,45 +1,45 @@
 <section>
-
+  {{!-- Display all projects of company if there are any --}}
   <h2 class="mt-4 mb-2 text-center">Company Projects</h2>
   <div class="bg-dark rounded mt-2 mb-3 mx-4 p-1"></div>
-
   <div class="mx-2 d-flex flex-row flex-wrap justify-content-center">
+    {{!-- List of projects --}}
     {{#if projects.length}}
     {{#each projects as |project|}}
     {{> project-list}}
     {{/each}}
     {{else}}
+    {{!-- Else, display text --}}
     <p>The company is not working on any projects.</p>
     {{/if}}
   </div>
-
-
+  {{!-- Display managers if there are any --}}
   <h3 class="mt-5 mb-2 text-center">Managers</h3>
   <div class="bg-dark rounded mt-2 mb-3 mx-4 p-1"></div>
-
   <div class="mx-2 d-flex flex-row flex-wrap justify-content-center">
+  {{!-- Get employees only if they are managers --}}
     {{#if employees.length}}
     {{#each managers as |manager|}}
     {{> employee-list}}
     {{/each}}
     {{else}}
+    {{!-- Else, display text --}}
     <p>The company has no managers.</p>
     {{/if}}
   </div>
-
   <h3 class="mt-5 mb-2 text-center">Employees</h3>
-
   <div class="bg-dark rounded mt-2 mb-3 mx-4 p-1">
   </div>
-
   <div class="mx-2 d-flex flex-row flex-wrap justify-content-center">
+    {{!-- If there are any employees --}}
     {{#if employees.length}}
+    {{!-- List of employees --}}
     {{#each employees as |employee|}}
     {{> employee-list}}
     {{/each}}
     {{else}}
+    {{!-- Else, display text --}}
     <p>The company has no employees.</p>
     {{/if}}
   </div>
-
 </section>

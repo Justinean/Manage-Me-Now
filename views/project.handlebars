@@ -1,13 +1,15 @@
 <section class="container">
-  {{!-- <div class="main-container m-2"> --}}
     <div class="mt-5 ms-3">
       <h2 class="p-4">All Projects</h2>
       <div class="mt-2 mb-5 d-flex flex-row flex-wrap justify-content-center">
+      {{!-- If there are any projects --}}
         {{#if projects.length}}
+        {{!-- List of projects --}}
         {{#each projects as |project|}}
         {{> project-list}}
         {{/each}}
         {{else}}
+        {{!-- Else, display text --}}
         <p>You have no current projects.</p>
         {{/if}}
       </div>
@@ -17,27 +19,30 @@
 
     <div class="ms-3 p-4 my-3">
       <h2 class="d-inline">Project: {{currentProject.name}}</h2>
+      {{!-- If a manger --}}
       {{#if isMgr}}
+      {{!-- Show a button to delete project --}}
       <a class="d-inline-block my-3 mx-4 btn btn-color" data-id="{{currentProject.id}}" id="deleteProjectBtn"
         href="/dashboard/newProject">Delete Project</a>
       {{/if}}
     </div>
-
-    {{!-- flex container --}}
+    {{!-- Flex container --}}
     <div class="container-fluid d-flex flex-column m-0 mb-5">
       <div class="row justify-content-center">
-        {{!-- left flex --}}
+        {{!-- Left flex --}}
         <div class="border border-dark border-1 p-4 col-sm-5 mx-2 rounded col-color text-center">
           <div class="card column-top mb-4">
             <h3 class="text-center my-3">Project Employees</h3>
-            {{!-- display this btn inline with heading --}}
+            {{!-- If a manager --}}
             {{#if isMgr}}
+            {{!-- Show button to add employee --}}
             <a class="mt-3 mb-5 mx-4 btn btn-color" href="/project/addEmployee/{{currentProject.id}}">Add
               New Employee</a>
             {{/if}}
-            {{!-- all employees on project --}}
+            {{!-- If adding employee --}}
             {{#if addEmployee}}
-            <form id="newEmployeeForm" class="py-3 px-2 m-2 bg-light border border-dark rounded">
+            <form id="newEmployeeForm" class="py-3 px-2 m-2 bg-lightgrey border border-dark rounded">
+              {{!-- list of all company employees --}}
               {{#each allEmployees as |allEmployee|}}
               {{> employees-to-add}}
               {{/each}}
@@ -45,27 +50,31 @@
             </form>
             {{/if}}
           </div>
+          {{!-- List of employees --}}
           {{#each employees as |employee|}}
           {{> employee-list}}
           {{/each}}
         </div>
-
-        {{!-- right flex --}}
+        {{!-- Right flex --}}
         <div class="border border-dark border-1 p-4 col-sm-6 mx-2 rounded col-color">
           <div class="card column-top text-center mb-4">
             <h3 class="my-3">Project Tasks</h3>
+            {{!-- If a manager --}}
             {{#if isMgr}}
+            {{!-- Show button to add task --}}
             <a class=" mt-3 mb-5 mx-4 btn btn-color" href="/project/newTask/{{currentProject.id}}">Add New Task</a>
           </div>
-
           {{/if}}
+          {{!-- If adding task --}}
           {{#if newTask}}
-          <form id="newTaskForm" class="p-2 bg-light border border-dark rounded">
+          {{!-- Form for new task --}}
+          <form id="newTaskForm" class="p-2 bg-lightgrey border border-dark rounded">
             <div class="mb-3 mt-3 mx-3">
               <label for="newTask" class="form-label">Task</label>
               <input class="form-control" id="newTaskInput" placeholder="Enter new task">
             </div>
             <div class="mb-3 mx-3">
+              {{!-- List of all company employees --}}
               {{#each allEmployees as |allEmployee|}}
               {{> employees-to-add}}
               {{/each}}
@@ -74,7 +83,9 @@
           </form>
           {{/if}}
           <div class="mx-2">
+            {{!-- If there are tasks --}}
             {{#if tasks.length}}
+            {{!-- List of tasks --}}
             {{#each tasks as |task|}}
             {{> task-details}}
             {{/each}}
@@ -85,17 +96,19 @@
         </div>
       </div>
     </div>
-    {{!--
-  </div> --}}
 </section>
-
+{{!-- If adding employee --}}
 {{#if addEmployee}}
+{{!-- Add employee JS is available --}}
 <script src="/js/addEmployee.js"></script>
 {{/if}}
+{{!-- If adding task --}}
 {{#if newTask}}
+{{!-- New task JS is available --}}
 <script src="/js/newTask.js"></script>
 {{/if}}
+{{!-- If a manager --}}
 {{#if isMgr}}
+{{!-- Edit project JS is available --}}
 <script src="/js/editProject.js"></script>
 {{/if}}
-{{!-- end of code --}}

@@ -1,11 +1,16 @@
 <section class="m-4">
   <div class="mb-4 d-flex flex-column align-items-center">
+    {{!-- If they have loaded a profile picture --}}
     {{#if imageExists}}
+    {{!-- Show the profile picture --}}
     <img class="rounded rounded-circle m-3 profileImg" src="https://manage-me-now-images.s3.us-east-2.amazonaws.com/{{imageId}}.jpg" alt="">
     {{else}}
+    {{!-- Else, show a placeholder image --}}
     <img class="m-3" src="https://via.placeholder.com/250" alt="">
     {{/if}}
+    {{!-- If it's the user's dashboard --}}
     {{#if myDash}}
+    {{!-- Allow user to upload photo --}}
     <form action="/api/employees/upload" method="post" enctype="multipart/form-data" class="my-4">
       <div class="form-group">
         <label class="d-block" for="imageUpload">Profile Photo (250 x 250 px)</label>
@@ -14,62 +19,67 @@
       </div>
     </form>
     {{/if}}
+    {{!-- Display username, email --}}
     <h2 class="mb-3">{{username}}</h2>
     <h5><a class="icon" href="mailto:{{email}}"> <i class="far fa-envelope mx-2"></i>{{email}}</a></h5>
   </div>
   <hr>
+  {{!-- Current projects of employee --}}
   <div class="mt-5">
     <h3 class="d-inline">Current Projects</h3>
+    {{!-- If a manager --}}
     {{#if isMgr}}
     {{#if myDash}}
+    {{!-- Can add new project --}}
     <a class="d-inline-block my-4 mx-4 btn btn-color" href="/dashboard/newProject">Add New Project</a>
     {{/if}}
     {{/if}}
 
     <div class="mt-1 d-flex flex-row flex-wrap justify-content-center">
+      {{!-- If there are any projects --}}
       {{#if projects.length}}
+      {{!-- List of projects --}}
       {{#each projects as |project|}}
       {{> project-list}}
       {{/each}}
       {{else}}
+      {{!-- Else, display text --}}
       <p>There are no current projects.</p>
       {{/if}}
     </div>
     <div>
+      {{!-- If adding new project, display form --}}
       {{#if newProject}}
-      <form class="p-2 bg-light border border-dark rounded" id='newProjectForm'>
+      <form class="p-2 my-4 bg-lightgrey border border-dark rounded" id='newProjectForm'>
         <div class="mb-3 mt-3 mx-3">
           <label for="newProjectName" class="form-label">New Project Name</label>
           <input type="text" class="form-control" id="newProjectName" placeholder="Enter New Project Name">
         </div>
-
         <div class="mb-3 mx-3">
           <button class="btn btn-color">Add Project</button>
         </div>
       </form>
       {{/if}}
     </div>
-
   </div>
-
   <hr>
-
   <div class="mt-5">
     <h3>Current Tasks</h3>
     <div class="mt-4 d-flex flex-column align-items-center col-color rounded">
+      {{!-- If there are any tasks --}}
       {{#if tasks.length}}
+      {{!-- List of tasks --}}
       {{#each tasks as |task|}}
       {{> task-details}}
       {{/each}}
       {{else}}
+      {{!-- Else, display text --}}
       <p class="pt-3">There are no current tasks.</p>
       {{/if}}
     </div>
   </div>
-
 </section>
-
+{{!-- If a manager, the new project JS is available --}}
 {{#if isMgr}}
 <script src="/js/newProject.js"></script>
 {{/if}}
-{{!-- End of code. --}}
