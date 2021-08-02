@@ -50,7 +50,7 @@
     <div>
       {{!-- If adding new project, display form --}}
       {{#if newProject}}
-      <form class="p-2 my-4 bg-lightgrey border border-dark rounded" id='newProjectForm'>
+      <form class="p-2 my-4 bg-light border border-dark rounded" id='newProjectForm'>
         <div class="mb-3 mt-3 mx-3">
           <label for="newProjectName" class="form-label">New Project Name</label>
           <input type="text" class="form-control" id="newProjectName" placeholder="Enter New Project Name">
@@ -65,7 +65,7 @@
   <hr>
   <div class="mt-5">
     <h3>Current Tasks</h3>
-    <div class="mt-4 d-flex flex-column align-items-center col-color rounded">
+    <div class="mt-4 d-flex flex-column align-items-center col-color rounded border border-dark">
       {{!-- If there are any tasks --}}
       {{#if tasks.length}}
       {{!-- List of tasks --}}

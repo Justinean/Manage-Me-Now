@@ -31,7 +31,7 @@
       <div class="row justify-content-center">
         {{!-- Left flex --}}
         <div class="border border-dark border-1 p-4 col-sm-5 mx-2 rounded col-color text-center">
-          <div class="card column-top mb-4">
+          <div class="card border border-dark rounded column-top mb-4">
             <h3 class="text-center my-3">Project Employees</h3>
             {{!-- If a manager --}}
             {{#if isMgr}}
@@ -41,7 +41,7 @@
             {{/if}}
             {{!-- If adding employee --}}
             {{#if addEmployee}}
-            <form id="newEmployeeForm" class="py-3 px-2 m-2 bg-lightgrey border border-dark rounded">
+            <form id="newEmployeeForm" class="py-3 px-2 m-2 bg-light border border-dark rounded">
               {{!-- list of all company employees --}}
               {{#each allEmployees as |allEmployee|}}
               {{> employees-to-add}}
@@ -57,7 +57,7 @@
         </div>
         {{!-- Right flex --}}
         <div class="border border-dark border-1 p-4 col-sm-6 mx-2 rounded col-color">
-          <div class="card column-top text-center mb-4">
+          <div class="card border border-dark rounded column-top text-center mb-4">
             <h3 class="my-3">Project Tasks</h3>
             {{!-- If a manager --}}
             {{#if isMgr}}
@@ -68,7 +68,7 @@
           {{!-- If adding task --}}
           {{#if newTask}}
           {{!-- Form for new task --}}
-          <form id="newTaskForm" class="p-2 bg-lightgrey border border-dark rounded">
+          <form id="newTaskForm" class="p-2 bg-light border border-dark rounded">
             <div class="mb-3 mt-3 mx-3">
               <label for="newTask" class="form-label">Task</label>
               <input class="form-control" id="newTaskInput" placeholder="Enter new task">
